@@ -1,0 +1,33 @@
+; InitSpawnchute VERSION 2021-09-16
+; args: [unit, type, si]
+
+? !AdvancedMode : exit
+? !ParachuteOn : exit
+
+_local = local LocalServerObject
+_unit = _this select 0;
+
+? !_local : goto "skip"
+
+_posUnit = getPos _unit;
+_height = spawnchuteMinHeight + (Random spawnchuteRandomFactor);
+
+_unit setPos [(_posUnit select 0), (_posUnit select 1), _height];
+_unit setUnitPos "UP";
+_unit stop true;
+
+_chute = "ParachuteC" createVehicle [0, 0];
+_chuteNewPos = getPos _unit;
+_chute setPos [(_chuteNewPos select 0), (_chuteNewPos select 1), _height];
+
+#skip
+@ getPos _unit select 2 > 1 || _time > 60
+_unit switchMove "Para";
+
+#drop
+~0.001
+? _local : _chutePos = getPos _chute; _unit setUnitPos "UP"; _unit setPos [_chutePos select 0, _chutePos select 1, (_chutePos select 2) - 1]; _unit setVelocity [0, 0, 0]; _unit setDir getDir _chute
+? getPos _unit select 2 > 1 : goto "drop"
+
+_unit switchMove "CombatGetOutTank"
+? _local : _unit stop false; _unit setUnitPos "AUTO"; _unit setCombatMode "YELLOW"; _unit setBehaviour "COMBAT"; _unit setSpeedMode "FULL"; deleteVehicle _chute

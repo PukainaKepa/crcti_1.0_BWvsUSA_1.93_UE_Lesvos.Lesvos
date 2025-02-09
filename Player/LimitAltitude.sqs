@@ -1,0 +1,25 @@
+; args: [maxAltitude]
+
+_max = _this select 0
+
+#Wait
+
+@ (((getPos player) select 2) > (_max - 50))
+
+;player globalchat "player near max alt"
+
+#CheckAlt
+	~0.1
+	_vehicle = vehicle player
+	_alt = (getPos _vehicle) select 2
+
+	? (_alt < (_max-50)): goto "Wait"
+	? (_alt < _max): goto "CheckAlt"
+
+_vel = velocity _vehicle
+_vel set [2, -5]
+_vehicle setVelocity _vel
+
+;player globalchat "velocity set"
+
+goto "CheckAlt"

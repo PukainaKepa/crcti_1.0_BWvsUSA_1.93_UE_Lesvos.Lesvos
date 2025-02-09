@@ -1,0 +1,23 @@
+; args : none
+
+_textSP = ["Random", "Fix"] select fixedStartPos
+
+_textTG = ["On", "Off"] select noTG
+
+_textTB = ["Off", "On"] select Tbon
+
+_textMF = ["On", "Off"] select NoStDef
+
+_textRules = ["ONE Base (MHQ) and ONE Start Light Factory"] select 0
+
+_si = si0
+_group = (groupMatrix select _si) select 0
+_textWCo = [name leader _group,"> AI <"] select (_group in (groupAiMatrix select _si))
+
+_si = si1
+_group = (groupMatrix select _si) select 0
+_textECo = [name leader _group,"> AI <"] select (_group in (groupAiMatrix select _si))
+
+_info = format["Start positions: %1\nTownGroup: %2\nTimeboost: %3\nMF Style: %4\nGroup size: %5\nView Distance: %6\nCommander (BW):  %7\nCommander (US):  %8\n%9\nRules: %10\n", _textSP, _textTG, _textTB, _textMF, maxGroupSize, viewDistance, _textWCo, _textECo, localize "STR_MISSION_NAME", _textRules]
+
+titleText [_info, "PLAIN", 2]

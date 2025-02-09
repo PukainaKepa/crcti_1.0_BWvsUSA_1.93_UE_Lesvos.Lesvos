@@ -1,0 +1,49 @@
+; args: [vehicle, pos, unit]
+
+; player globalchat format ["Event_GetOutHeli.sqs"]
+
+_unit = _this select 2
+~0.5
+? !(local _unit) : exit
+
+_altOpen = 120
+_altMin = 50
+
+? _unit != (vehicle _unit) : deleteVehicle (vehicle _unit); goto "Check"
+exit
+
+#Check
+
+_class = "ParachuteC"
+
+? !(alive _unit) : exit
+
+? _unit == player : goto "Manual"
+
+#CheckAlt
+  ~0.01
+  ? ((getPos _unit) select 2) > (80 - ((velocity _unit) select 2)) : goto "CheckAlt"
+
+? !(alive _unit): exit
+
+#Deploy
+
+_pos = getPos _unit
+? (_pos select 2) < _altMin : exit
+
+_chute = _class createVehicle _pos
+_chute setPos _pos
+_chute setVelocity (velocity _unit)
+_unit moveInDriver _chute
+exit
+
+#Manual
+? ((getPos _unit) select 2) < _altMin : exit
+? ((getPos _unit) select 2) < _altOpen : goto "Deploy"
+CRCTI_DeployChute = false
+_id = _unit addAction ["Deploy Chute", "Player\Action_DeployChute.sqs"]
+@ CRCTI_DeployChute || !(alive _unit)
+_unit removeAction _id
+? !(alive _unit) : exit
+? ((getPos _unit) select 2) < _altMin : hint format["Too late.\nYou must be above %1 m.", _altMin]; exit
+? ((getPos _unit) select 2) > _altMin : goto "Deploy"

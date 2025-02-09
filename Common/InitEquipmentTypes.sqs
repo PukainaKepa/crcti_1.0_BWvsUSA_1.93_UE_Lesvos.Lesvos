@@ -1,0 +1,525 @@
+
+equipDefs = []
+
+edName = 0
+edSides = 1
+edSlotType = 2
+edSlots = 3
+edObject = 4
+edImage = 5
+edCost = 6
+
+; inventory slot types
+isGeneral = 0
+isHandgun = 1
+isOptics = 2
+
+isGeneralSlots = 10
+isHandgunSlots = 4
+isOpticsSlots = 2
+
+; addon specific equipment used in scripts
+magMine = "Mine"
+ammoMine = "Mine"
+magTimeBomb = "TimeBomb"
+magSatchel = "PipeBomb"
+weaponPut = "Put"
+weaponsCustom = []
+
+cargoCarSide0 = [[magMine,3], ["Pipebomb",4], ["DVD_RGW60_R",4], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["DVD_PzFst3_T",2], ["CarlGustavLauncher",4], ["BWMOD_FLF2_R",2]] 
+cargoCarSide1 = [[magMine,3], ["Pipebomb",4], ["DVDUS_LAWmag",4], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["CBT_Jav_Mag",2], ["DVD_CGmag",4], ["AALauncher",2]] 
+
+cargoHeavyCarSide0 = [[magMine,5], ["Pipebomb",5], ["DVD_RGW60_R",6], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["DVD_PzFst3_T",4], ["CarlGustavLauncher",4], ["BWMOD_FLF2_R",2]] 
+cargoHeavyCarSide1 = [[magMine,5], ["Pipebomb",5], ["DVDUS_LAWmag",6], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["CBT_Jav_Mag",4], ["DVD_CGmag",4], ["AALauncher",2]]
+
+cargoTruckSide0 = [[magMine,8], ["Pipebomb",10], ["DVD_RGW60_R",10], ["DVD_PzFst3_B",8], ["DVD_PzFst3_R",8], ["DVD_PzFst3_T",6], ["CarlGustavLauncher",8], ["BWMOD_FLF2_R",4]]
+cargoTruckSide1 = [[magMine,8], ["Pipebomb",10], ["DVDUS_LAWmag",10], ["DVDUS_smawHE",8], ["DVDUS_smawAT",8], ["CBT_Jav_Mag",6], ["DVD_CGmag",8], ["AALauncher",4]]
+
+weaponsRespawnPlayer = [ ["DVD_G36A", "DVD_PzFst3", "Binocular", "NVGoggles"], ["DVDUS_M16acog", "DVDUS_smawLauncher", "Binocular", "NVGoggles"]]
+magsRespawnPlayer = [ ["DVD_G36AMag", "DVD_G36AMag", "DVD_G36AMag", "DVD_PzFst3_R"], ["DVDUS_m16mag", "DVDUS_m16mag", "DVDUS_m16mag", "DVDUS_smawAT"]]
+
+weaponsRespawnAI = [ ["DVD_G36A", "DVD_PzFst3", "Binocular", "NVGoggles"], ["DVDUS_M16acog", "DVDUS_smawLauncher", "Binocular", "NVGoggles"]]
+magsRespawnAI = [ ["DVD_G36AMag", "DVD_G36AMag", "DVD_PzFst3_R", "DVD_PzFst3_R"], ["DVDUS_m16mag", "DVDUS_m16mag", "DVDUS_smawAT", "DVDUS_smawAT"]]
+
+; EQUIP (ammo followed by equipment)
+
+; IMPORTANT - primary and secondary mag names must be same as weapon name to make template names look good
+
+_type = 0
+
+; WEST AMMO
+
+equipDefs set [_type, ["G3A3", si0, isGeneral, 1, "DVD_G3A3mag", "\BWMOD_G3A3\G3mag.paa", 20 ]]
+_atG3A3 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G36A", si0, isGeneral, 1, "DVD_G36aMag", "\G36a\m_G36.paa", 25 ]]
+_atG36A = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G36 beta C", si0, isGeneral, 2, "DVD_G36cMag", "\DVD_Config\Pics\cm_g36.paa", 25 ]]
+_atG36Cmag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G3SG1", si0, isGeneral, 1, "DVD_G3SG1mag", "\dtaext\equip\m\m_pk.paa", 50 ]]
+_atG3SG1 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G22", si0, isGeneral, 1, "BWMOD_G22Mag", "\BWMOD_w\pic\m_g22.paa", 50 ]]
+_atG22 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G82 AP", si0, isGeneral, 1, "DVD_G82APmag", "\M82A1\m_m82.jpg", 75 ]]
+_atG82AP = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G82 HE", si0, isGeneral, 1, "DVD_G82HEmag", "\M82A1\m_m82in.jpg", 75 ]]
+_atG82HE = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MSG3", si0, isGeneral, 1, "DVD_MSG3mag", "\BWMOD_MSG3\G3mag.paa", 50 ]]
+_atMSG3 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MSG90", si0, isGeneral, 1, "DVD_MSG90mag", "\BWMOD_MSG90\G3mag.paa", 50 ]]
+_atMSG90 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MSG90 SD", si0, isGeneral, 1, "DVD_MSG90SDmag", "\BWMOD_MSG90\G3mag.paa", 50 ]]
+_atMSG90A1 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MM-1", si0, isGeneral, 4, "DVD_MM1mag", "\mm-1\m_mm1", 150 ]]
+_atMM1 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MG3", si0, isGeneral, 2, "DVD_MG3infMag", "\BWMOD_w\pic\m_mg3.paa", 50 ]]
+_atMG3 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MG4", si0, isGeneral, 2, "DVD_MG4Mag", "\BWMOD_MG4\pic\m_mg4.paa", 50 ]]
+_atMG4 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP5", si0, isGeneral, 1, "DVD_MP5mag", "\DVD_Config\MP5\pics\m_mp5.paa", 20 ]]
+_atMP5N = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP5SD", si0, isGeneral, 1, "DVD_MP5SDmag", "\DVD_Config\MP5\pics\m_mp5.paa", 20 ]]
+_atMP5SD = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Pzfst3", si0, isGeneral, 4, "DVD_PzFst3_R", "\BWMOD_w\pic\m_pzfst3_pf.paa", 150 ]]
+_atPzfst3 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["BunkerFst", si0, isGeneral, 2, "DVD_PzFst3_B", "\BWMOD_w\pic\m_pzfst3_pf.paa", 60 ]]
+_atBunkerFst = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Pzfst3T", si0, isGeneral, 6, "DVD_PzFst3_T", "\BWMOD_w\pic\m_pzfst3_pf.paa", 300 ]]
+_atPzfst3T = _type
+_type = _type + 1
+
+equipDefs set [_type, ["RGW60", si0, isGeneral, 2, "DVD_RGW60_R", "\BWMOD_w\pic\m_pzfst3_pf.paa", 60 ]]
+_atRGW60 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Carl Gustav", si0, isGeneral, 4, "DVD_CGmag", "\dtaExt\equip\m\m_carlgustavlauncher", 60 ]]
+_atCarlGustav = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flfst2", si0, isGeneral, 6, "BWMOD_FLF2_R", "\dtaExt\equip\m\m_aalauncher", 300 ]]
+_atStinger = _type
+_type = _type + 1
+
+equipDefs set [_type, ["G3 Grenade", si0, isGeneral, 1, "DVD_40mmGranate", "\bwmod_g3tgs\40mm.paa", 25 ]]
+_atGrenadeBW = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP2", si0, isHandgun, 1, "DVD_UZImag", "\DVD_Config\pics\m_uzi.paa", 20 ]]
+_atUZI = _type
+_type = _type + 1
+
+equipDefs set [_type, ["P8", si0, isHandgun, 1, "BWMOD_P8Mag", "\BWMOD_w\pic\m_p8.paa", 20 ]]
+_atP8 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare", si0, isHandgun, 1, "BWMOD_Flare", "\dtaExt\equip\m\m_flare", 5 ]]
+_atFlareP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Green", si0, isHandgun, 1, "BWMOD_FlareGreen", "\dtaExt\equip\m\m_flaregreen", 5 ]]
+_atFlareGreenP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Red", si0, isHandgun, 1, "BWMOD_FlareRed", "\dtaExt\equip\m\m_flarered", 5 ]]
+_atFlareRedP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Yellow", si0, isHandgun, 1, "BWMOD_FlareYellow", "\dtaExt\equip\m\m_flareyellow", 5 ]]
+_atFlareYellowP2 = _type
+_type = _type + 1
+
+; EAST AMMO
+
+equipDefs set [_type, ["M16", si1, isGeneral, 1, "DVDUS_m16mag", "\c8xmag\pics\m16Mag.paa", 25 ]]
+_atM16mag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M4", si1, isGeneral, 1, "DVDUS_m4mag", "\c8xmag\pics\m16Mag.paa", 25 ]]
+_atM4mag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M4 SD", si1, isGeneral, 1, "DVDUS_m4SDmag", "\c8xmag\pics\m16Mag.paa", 25 ]]
+_atM4SDmag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M82 AP", si1, isGeneral, 1, "DVD_M82APmag", "\M82A1\m_m82.jpg", 75 ]]
+_atM82AP = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M82 HE", si1, isGeneral, 1, "DVD_M82HEmag", "\M82A1\m_m82in.jpg", 75 ]]
+_atM82HE = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP5", si1, isGeneral, 1, "DVD_MP5mag", "\DVD_Config\MP5\pics\m_mp5.paa", 20 ]]
+_atMP5N = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP5SD", si1, isGeneral, 1, "DVD_MP5SDmag", "\DVD_Config\MP5\pics\m_mp5.paa", 20 ]]
+_atMP5SD = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M21", si1, isGeneral, 1, "DVDUS_M21mag", "\dtaExt\equip\m\m_m21.paa", 50 ]]
+_atM21 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M21 SD", si1, isGeneral, 1, "DVDUS_M21SDmag", "\GRU_M21A2\m_m21.paa", 50 ]]
+_atM21SD = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M24", si1, isGeneral, 1, "DVDUS_M24mag", "\M24\pictures\m_m24.paa", 50 ]]
+_atM24 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M24 SD", si1, isGeneral, 1, "DVDUS_M24SDmag", "\M24\pictures\m_m24.paa", 50 ]]
+_atM24SD = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MM-1", si1, isGeneral, 4, "DVD_MM1mag", "\mm-1\m_mm1", 150 ]]
+_atMM1 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M60", si1, isGeneral, 2, "DVD_M60infMag", "\dvd_config\m60\m_m60.paa", 50 ]]
+_atM60mag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M249", si1, isGeneral, 2, "DVDUS_m249mag", "\c8xmag\pics\M249mag.paa", 50 ]]
+_atM249mag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M249 Para", si1, isGeneral, 2, "DVDUS_m249PARAmag", "\c8xmag\pics\M249mag.paa", 50 ]]
+_atM249PARAmag = _type
+_type = _type + 1
+
+equipDefs set [_type, ["SMAW AT", si1, isGeneral, 4, "DVDUS_smawAT", "\SUCHusmc\smaw\geard2.paa", 150 ]]
+_atSMAWAT = _type
+_type = _type + 1
+
+equipDefs set [_type, ["SMAW HE", si1, isGeneral, 2, "DVDUS_smawHE", "\SUCHusmc\smaw\geard2.paa", 60 ]]
+_atSMAWHE = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Carl Gustav", si1, isGeneral, 4, "DVD_CGmag", "\dtaExt\equip\m\m_carlgustavlauncher", 60 ]]
+_atCarlGustav = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M72A3", si1, isGeneral, 2, "DVDUS_LAWmag", "\dtaExt\equip\m\m_lawlauncher", 60 ]]
+_atLAW = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Stinger", si1, isGeneral, 6, "AALauncher", "\dtaExt\equip\m\m_aalauncher", 300 ]]
+_atStinger = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Javelin", si1, isGeneral, 6, "CBT_Jav_Mag", "\CBT_Misc\jav\gear2.paa", 300 ]]
+_Javelin = _type
+_type = _type + 1
+
+equipDefs set [_type, ["M203 Grenade", si1, isGeneral, 1, "c8xM203grenade", "\c8xmag\pics\m203grenade.paa", 25 ]]
+_atGrenadeM203 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["MP2", si1, isHandgun, 1, "DVD_UZImag", "\DVD_Config\pics\m_uzi.paa", 20 ]]
+_atUZI = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Beretta Mag", si1, isHandgun, 1, "BerettaMag", "\O\Guns\zasobnik", 20 ]]
+_atBeretta = _type
+_type = _type + 1
+
+equipDefs set [_type, ["1911 Mag", si1, isHandgun, 1, "DVDUS_1911mag", "\O\Guns\zasobnik", 20 ]]
+_at1911 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["GlockS Mag", si1, isHandgun, 1, "GlockSMag", "\O\Guns\zasobnik.paa", 20 ]]
+_atGlockS = _type
+_type = _type + 1
+
+equipDefs set [_type, ["USP Mag", si1, isHandgun, 1, "USP_SOCOMMag", "\O\Guns\zasobnik.paa", 20 ]]
+_atUSP = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare", si1, isHandgun, 1, "BWMOD_Flare", "\dtaExt\equip\m\m_flare", 5 ]]
+_atFlareP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Green", si1, isHandgun, 1, "BWMOD_FlareGreen", "\dtaExt\equip\m\m_flaregreen", 5 ]]
+_atFlareGreenP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Red", si1, isHandgun, 1, "BWMOD_FlareRed", "\dtaExt\equip\m\m_flarered", 5 ]]
+_atFlareRedP2 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Yellow", si1, isHandgun, 1, "BWMOD_FlareYellow", "\dtaExt\equip\m\m_flareyellow", 5 ]]
+_atFlareYellowP2 = _type
+_type = _type + 1
+
+
+; BOTH AMMO
+
+equipDefs set [_type, ["M1014 Shells", siBoth, isGeneral, 1, "C8XM1014mag", "\c8xmag\pics\shell.paa", 25 ]]
+_atM1014 = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare", siBoth, isGeneral, 1, "Flare", "\dtaExt\equip\m\m_flare", 5 ]]
+_atFlare = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Green", siBoth, isGeneral, 1, "FlareGreen", "\dtaExt\equip\m\m_flaregreen", 5 ]]
+_atFlareGreen = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Red", siBoth, isGeneral, 1, "FlareRed", "\dtaExt\equip\m\m_flarered", 5 ]]
+_atFlareRed = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Flare Yellow", siBoth, isGeneral, 1, "FlareYellow", "\dtaExt\equip\m\m_flareyellow", 5 ]]
+_atFlareYellow = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Laser", siBoth, isGeneral, 6, "LaserDesignator", "\dtaExt\equip\m\m_carlgustavlauncher", 0 ]]
+_atLaser = _type
+_type = _type + 1
+
+firstEquip = _type
+
+equipDefs set [_type, ["Binoculars", siBoth, isOptics, 1, "Binocular", "\dtaExt\equip\w\w_binocular", 0 ]]
+etBinocs = _type
+_type = _type + 1
+
+equipDefs set [_type, ["NV Goggles", siBoth, isOptics, 1, "NVGoggles", "\dtaExt\equip\w\w_nvgoggles", 0 ]]
+etNVgoggles = _type
+_type = _type + 1
+
+equipDefs set [_type, ["Hand Grenade", siBoth, isGeneral, 1, "HandGrenade", "\dtaExt\equip\m\m_handgrenade", 10 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Mine", siBoth, isGeneral, 2, magMine, "\dtaExt\equip\m\m_mine", 50 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Satchel", siBoth, isGeneral, 2, "Pipebomb", "\dtaExt\equip\m\m_pipebomb", 50 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Time Bomb", siBoth, isGeneral, 2, "Timebomb", "\dtaExt\equip\m\m_pipebomb", 50 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Smoke Shell", siBoth, isGeneral, 1, "SmokeShell", "\dtaExt\equip\m\m_smokeshell", 5 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Smoke Shell Green", siBoth, isGeneral, 1, "SmokeShellGreen", "\dtaExt\equip\m\m_smokeshell", 5 ]]
+_type = _type + 1
+
+equipDefs set [_type, ["Smoke Shell Red", siBoth, isGeneral, 1, "SmokeShellRed", "\dtaExt\equip\m\m_smokeshellred", 5 ]]
+_type = _type + 1
+
+weaponDefs = []
+
+wdName = 0
+wdSides = 1
+wdType = 2
+wdObject = 3
+wdImage = 4
+wdAmmoTypes = 5
+wdCost = 6
+
+; weapon types
+wtPrimary = 0
+wtPrimaryOnly = 1
+wtSecondary = 2
+wtHandgun = 3
+
+; WEAPONS
+
+_type = 0
+
+; WEST WEAPONS
+
+weaponDefs set [_type, ["G36A", si0, wtPrimary, "DVD_G36A", "\G36A\w_g36", [[_atG36Cmag,2],[_atG36A,0]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["G3A3", si0, wtPrimary, "DVD_G3A3", "\BWMOD_G3A3\G3A3.paa", [[_atG3A3,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["G3TGS", si0, wtPrimary, "DVD_G3A3TGS", "\bwmod_g3tgs\g3tgs.paa", [[_atG3A3,4],[_atGrenadeBW,6],[_atFlare,0],[_atFlareGreen,0],[_atFlareRed,0],[_atFlareYellow,0]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5", si0, wtPrimary, "DVD_MP5N", "\DVD_Config\MP5\pics\w_mp5.paa", [[_atMP5N,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5 Tactical", si0, wtPrimary, "DVD_MP5T", "\DVD_Config\MP5\pics\w_mp5_tactical_aimpoint.paa", [[_atMP5N,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5 SD6", si0, wtPrimary, "DVD_MP5SD6", "\DVD_Config\MP5\pics\w_mp5sd6.paa", [[_atMP5SD,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["G22", si0, wtPrimary, "BWMOD_G22", "\BWMOD_w\pic\w_g22.paa", [[_atG22,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["G82", si0, wtPrimary, "DVD_G82", "\M82a1\w_M82.jpg", [[_atG82AP,4],[_atG82HE,0]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["G3SG1", si0, wtPrimary, "DVD_G3SG1", "\BWMOD_G3SG1\BWMOD_G3SG1eq.paa", [[_atG3SG1,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MSG3", si0, wtPrimary, "DVD_MSG3", "\BWMOD_msg3\BWMOD_MSG3eq.paa", [[_atMSG3,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MSG90", si0, wtPrimary, "DVD_MSG90", "\BWMOD_msg90\BWMOD_MSG90eq.paa", [[_atMSG90,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MSG90 SD", si0, wtPrimary, "DVD_MSG90SD", "\BWMOD_msg90\BWMOD_MSG90eq.paa", [[_atMSG90A1,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MG3", si0, wtPrimaryOnly, "DVD_MG3inf", "\BWMOD_w\pic\w_mg3.paa", [[_atMG3,5]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MG4", si0, wtPrimaryOnly, "DVD_MG4", "\BWMOD_w\pic\w_mg4.paa", [[_atMG4,5]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MM-1", si0, wtPrimaryOnly, "DVD_MM1", "\MM-1\mm-1", [[_atMM1,2]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Pzfst3", si0, wtSecondary, "DVD_PzFst3", "\BWMOD_w\pic\w_pzfst3.paa", [[_atPzfst3,2],[_atBunkerfst,0],[_atPzfst3T,0]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["RGW60", si0, wtSecondary, "DVD_RGW60", "\DVD_Config\rgw60\w_RGW60.paa", [[_atRGW60,3]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Carl Gustav", si0, wtSecondary, "DVD_CG", "\dtaExt\equip\w\w_carlgustavlauncher", [[_atCarlGustav,2]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Flfst2", si0, wtSecondary, "BWMOD_FLF2", "\dtaExt\equip\w\w_aalauncher", [[_atStinger,1]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP2 UZI", si0, wtHandgun, "DVD_UZI", "\O\Guns\w_uzi.paa", [[_atUZI,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["P8", si0, wtHandgun, "BWMOD_P8", "\BWMOD_w\pic\w_p8.paa", [[_atP8,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["P2A1", si0, wtHandgun, "BWMOD_P2A1", "\BWMOD_w\pic\w_p2a1.pac", [[_atFlareP2,1],[_atFlareGreenP2,1],[_atFlareRedP2,1],[_atFlareYellowP2,1]], 0 ]]
+_type = _type + 1
+
+; EAST WEAPONS
+
+weaponDefs set [_type, ["M4", si1, wtPrimary, "DVDUS_M4acog", "\c8x_usmc\inv_pics\m4acog.paa", [[_atM4mag,4]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["M4 GL", si1, wtPrimary, "DVDUS_M4M203acog", "\c8x_usmc\inv_pics\m4acogM203.paa", [[_atM4mag,4], [_atGrenadeM203,6],[_atFlare,0],[_atFlareGreen,0],[_atFlareRed,0],[_atFlareYellow,0]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["M4SD", si1, wtPrimary, "DVDUS_M4acog_sd", "\c8x_usmc\inv_pics\m4SDacog.paa", [[_atM4SDmag,4]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["M4SD GL", si1, wtPrimary, "DVDUS_M4M203acog_sd", "\c8x_usmc\inv_pics\m4acogM203.paa", [[_atM4SDmag,4], [_atGrenadeM203,6],[_atFlare,0],[_atFlareGreen,0],[_atFlareRed,0],[_atFlareYellow,0]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["M16", si1, wtPrimary, "DVDUS_M16acog", "\c8x_usmc\inv_pics\M16a4acog.paa", [[_atM16mag,4]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["M16 GL", si1, wtPrimary, "DVDUS_M16M203acog", "\c8x_usmc\inv_pics\M16a4acogm203.paa", [[_atM16mag,4], [_atGrenadeM203,6],[_atFlare,0],[_atFlareGreen,0],[_atFlareRed,0],[_atFlareYellow,0]], 0 ]] 
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5", si1, wtPrimary, "DVD_MP5N", "\DVD_Config\MP5\pics\w_mp5.paa", [[_atMP5N,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5 Tactical", si1, wtPrimary, "DVD_MP5T", "\DVD_Config\MP5\pics\w_mp5_tactical_aimpoint.paa", [[_atMP5N,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MP5 SD6", si1, wtPrimary, "DVD_MP5SD6", "\DVD_Config\MP5\pics\w_mp5sd6.paa", [[_atMP5SD,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M21", si1, wtPrimary, "DVDUS_M21", "\dtaExt\equip\w\w_m21.paa", [[_atM21,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M21SD", si1, wtPrimary, "DVDUS_M21sd", "\GRU_M21A2\w_M21A2.jpg", [[_atM21SD,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M24", si1, wtPrimary, "DVDUS_M24", "\M24\pictures\w_m24.paa", [[_atM24,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M24SD", si1, wtPrimary, "DVDUS_M24SD", "\M24\pictures\w_m24sil.paa", [[_atM24SD,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M82", si1, wtPrimary, "DVD_M82", "\M82a1\w_M82.jpg", [[_atM82AP,4], [_atM82HE,0]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M249 Para", si1, wtPrimary, "DVDUS_M249PARAcco", "\c8x_usmc\inv_pics\M249paracco.paa", [[_atM249PARAmag,5]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M249", si1, wtPrimaryOnly, "DVDUS_M249m145", "\c8x_usmc\inv_pics\M249m145.paa", [[_atM249mag,5]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M60", si1, wtPrimaryOnly, "DVD_M60inf", "\dvd_config\m60\w_m60.paa", [[_atM60mag,5]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["MM-1", si1, wtPrimaryOnly, "DVD_MM1", "\MM-1\mm-1", [[_atMM1,2]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["M72 LAW", si1, wtSecondary, "DVDUS_LAWLauncher", "\dtaExt\equip\w\w_lawlauncher", [[_atLAW,3]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["SMAW", si1, wtSecondary, "DVDUS_smawLauncher", "\SUCHusmc\smaw\gear1.paa", [[_atSMAWAT,2],[_atSMAWHE,0]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Carl Gustav", si1, wtSecondary, "DVD_CG", "\dtaExt\equip\w\w_carlgustavlauncher", [[_atCarlGustav,2]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Stinger", si1, wtSecondary, "AALauncher", "\dtaExt\equip\w\w_aalauncher", [[_atStinger,1]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Javelin Missile", si1, wtSecondary, "CBT_Jav_Launcher", "\CBT_Misc\jav\gear1.paa", [[_Javelin,1]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["1911 Colt", si1, wtHandgun, "DVDUS_1911sf", "\wip_45\w_M1911sf.paa", [[_at1911,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Beretta", si1, wtHandgun, "Beretta", "\O\Guns\bereta", [[_atBeretta,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["HK USP SOCOM", si1, wtHandgun, "USP_SOCOM", "\dvd_us_config\pic\w_usp9sd.jpg", [[_atUSP,4]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["GlockS", si1, wtHandgun, "GlockS", "\O_wp\w_Glocksilent.paa", [[_atGlockS,4]], 0 ]]
+_type = _type + 1
+
+; BOTH WEAPONS
+
+weaponDefs set [_type, ["M1014", siBoth, wtPrimary, "C8XM1014", "\c8x_usmc\inv_pics\M1014.paa", [[_atM1014,6]], 0 ]]
+_type = _type + 1
+
+weaponDefs set [_type, ["Laser", siBoth, wtSecondary, "LaserDesignator", "\dtaExt\equip\w\w_carlgustavlauncher", [[_atLaser,1]], 0 ]]
+_type = _type + 1

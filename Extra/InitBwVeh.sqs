@@ -1,0 +1,8 @@
+[] exec "Extra\Entf.sqs"
+BWMod_NoFire=true
+;;BWMod_NoDust=true
+;;BWMOD_NoSmoke=true
+;;BWMod_NoEffects=true
+BWMod_NoSystemDamage=true
+BWMod_NoCountermeasures=true
+exit

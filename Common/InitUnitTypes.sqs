@@ -1,0 +1,801 @@
+; unitDefs defines all buildable units
+
+; IMPORTANT: all vehicles must have a non empty crew array
+
+unitDefs = []
+
+udName = 0
+udCost = 1
+udSide = 2
+udBuildTime = 3
+udModel = 4
+udImage = 5
+udFactoryType = 6
+udCrew = 7
+udMarkerType = 8
+udScripts = 9
+
+; knowsAbout level for infantry and vehicle enemy reports
+kaUnit = 1
+
+; VEHICLE MARKERS
+
+_mbike = "DVD_MBike_Marker"
+_mCar = "Car_Marker"
+_mTruck = "Truck_Marker"
+_mBoat= "Boat_Marker"
+_mAPC = "APC_Marker"
+_mTank = "Tank_Marker"
+_mHeli = "Helicopter_Marker"
+_mPlane = "Plane_Marker"
+_mSupport = "RepairVehicle_Marker"
+_mFuel = "FuelVehicle_Marker"
+_mMHQ = "MedicStructure_Marker"
+_mAA = "AAVehicle_Marker"
+
+_costSupportTruck = 1000
+_costSupportAPC = 1500
+_costNapalm = napalmTruckCost
+
+countInfCustom = 10
+costCustom = 400
+
+maxUnitTypes = 200 - countInfCustom
+
+_type = 0
+
+; WEST
+_si = si0
+
+; INFANTRY WEST
+_st = stBarracks
+
+unitDefs set [_type, ["Worker", costWorker, _si, 10, "DVD_SoldierW", "ivojak", -1, [], "", ["Server\UpdateWorker.sqs"]] ]
+utWorkerW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["G36A", 100, _si, 10, "DVD_SoldierW", "ivojak", _st, [], "", []] ]
+_soldierW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["G3GL", 100, _si, 10, "DVD_SoldierWGTGS", "igrenadier", _st, [], "", []] ]
+_soldierWTGS = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MM1", 150, _si, 10, "DVD_SoldierWHG", "igrenadier", _st, [], "", []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["MG3", 150, _si, 10, "DVD_SoldierWMG3", "ismg", _st, [], "", []] ]
+_soldierMGW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MG4", 150, _si, 10, "DVD_SoldierWMG4", "ismg", _st, [], "", []] ]
+_soldierLMGW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["G22 Sniper", 150, _si, 10, "DVD_SoldierWSniper", "isniper", _st, [], "", []] ]
+_sniperW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MSG90 Sniper", 250, _si, 10, "DVD_SoldierWMSG90", "isniper", _st, [], "", []] ]
+_sniperMSG90W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["RGW60", 200, _si, 10, "DVD_SoldierWLAW2", "islaw", _st, [], "", []] ]
+_soldierRGW60W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Carl Gustav", 200, _si, 10, "DVD_SoldierWAT", "isat", _st, [], "", []] ]
+_soldierATW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Pzfst3", 300, _si, 10, "DVD_SoldierWLAW", "isat", _st, [], "", []] ]
+_soldierLAWW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Pzfst3T", 300, _si, 10, "DVD_SoldierWLAW1", "isat", _st, [], "", []] ]
+_soldierLAW2W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Flfst2", 150, _si, 10, "DVD_SoldierWAA", "isaa", _st, [], "", []] ]
+_soldierAAW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["KSK Soldier (MP5)", 200, _si, 10, "DVD_KSKOp", "\DVD_Config\Pics\iKSKOp.paa", _st, [], "", []] ]
+_bomberW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["KSK Sniper (G22)", 250, _si, 10, "DVD_KSKSniper", "\DVD_Config\Pics\iKSKsniper.paa", _st, [], "", []] ]
+_bomber2W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["KSK Sniper (G82)", 400, _si, 10, "DVD_KSKSniper2", "\DVD_Config\Pics\iKSKsniper.paa", _st, [], "", []] ]
+_bomber3W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Miner", 100, _si, 10, "DVD_SoldierWMiner", "iminer", _st, [], "", []] ]
+_minerW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Medic", 100, _si, 10, "DVD_SoldierWMedic_female", "imedic", _st, [], "", []] ]
+_medicW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Crew", 100, _si, 10, "DVD_SoldierWCrew", "icrew", _st, [], "", []] ]
+_crewW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Pilot", 100, _si, 10, "DVD_SoldierWPilot", "ipilot", _st, [], "", []] ]
+_pilotW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Custom", costCustom, _si, 10, "DVD_SoldierW", "ivojak", -1, [], "", []] ]
+_customW = _type
+_type = _type + 1
+
+; LIGHT WEST
+_st = stLight
+
+unitDefs set [_type, ["KLR 250", 150, _si, 15, "DVD_sttklr250_W", "\DVD_Config\Pics\KLR.paa", _st, [1,_soldierW], _mbike, []] ]
+_klrW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Wolf", 200, _si, 20, "DVD_Wolf", "\DVD_Config\Pics\Wolf.paa", _st, [1, _soldierW], _mCar, ["Common\EquipCargoCar.sqs"]] ]
+_jeepW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Wolf MG3", 300, _si, 25, "DVD_WolfMG", "\DVD_Config\Pics\WolfMG.paa", _st, [2, _soldierW], _mCar, ["Common\EquipCargoCar.sqs"]] ]
+_jeepmgW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Dingo MG3", 400, _si, 25, "DVD_Dingo_MG3", "\DVD_Config\Pics\DingoMG3.paa", _st, [2, _soldierW], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_dingomg3W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Dingo GMG", 700, _si, 25, "DVD_Dingo_GMG", "\DVD_Config\Pics\DingoGMG.paa", _st, [2, _soldierW], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_dingoW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["TPz Fuchs", 700, _si, 25, "BWMOD_Fuchs", "\DVD_Config\Pics\Fuchs.paa", _st, [2, _soldierW], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_fuchsW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MAN 5t GL", 500, _si, 25, "DVD_MAN5tgl", "\DVD_Config\Pics\MAN5tgl.paa", _st, [2, _soldierW], _mTruck, ["Common\EquipCargoTruck.sqs"]] ]
+_mantruckW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MAN 5t Fuel Truck", 500, _si, 25, "DVD_MAN5tgltanker", "\DVD_Config\Pics\MANtanker.paa", _st, [2, _soldierW], _mTruck, []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["Unimog Combat", 400, _si, 25, "DVD_DB2t_Patr", "\DVD_Config\Pics\Unimog_Marsch.paa", _st, [2, _soldierW], _mTruck, ["Common\EquipCargoTruck.sqs"]] ]
+_truckW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Unimog FK20", 800, _si, 25, "DVD_DB2t_FK20", "\DVD_Config\Pics\Unimog_FK20.paa", _st, [2, _soldierW], _mTruck, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_type = _type + 1
+
+unitDefs set [_type, ["Unimog Support", _costSupportTruck, _si, 25, "DVD_DB2t_Repair", "\DVD_Config\Pics\Unimog_Inst.paa", _st, [2, _soldierW], _mSupport, ["Common\InitSupportVehicle.sqs", "Player\InitTransportTruck.sqs"]] ]
+_supportTruckW = _type
+_type = _type + 1
+
+? AdvancedMode : unitDefs set [_type, ["MAN 5t Napalm Truck", _costNapalm, _si, 30, "DVD_MAN5tgltanker", "\DVD_Config\Pics\MANtanker.paa", _st, [2, _soldierW], _mTruck, ["Common\Napalm.sqs","Common\Napalm2.sqs"]] ]; _type = _type + 1
+
+unitDefs set [_type, ["Patrol Boat Tug", 1000, _si, 30, "DVD_BoatW", "\DVD_Config\Pics\bootw.paa", _st, [2, _soldierW], _mBoat, ["Player\InitTransportBoat.sqs"]] ]
+_boatW = _type
+_type = _type + 1
+
+; HEAVY WEST
+_st = stHeavy
+
+unitDefs set [_type, ["Support Wiesel", _costSupportAPC, _si, 30, "DVD_Wiesel2san", "\DVD_Config\Pics\Wiesel2san.paa", _st, [1, _soldierW], _mSupport, ["Common\InitSupportVehicle.sqs", "Player\InitTransportAPC.sqs"]] ]
+_supportAPCW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Wiesel MK20", 1500, _si, 30, "DVD_Wiesel", "\DVD_Config\Pics\Wiesel.paa", _st, [2, _crewW], _mAPC, []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["Wiesel TOW", 2000, _si, 30, "DVD_WieselTOW", "\DVD_Config\Pics\WieselTOW.paa", _st, [3, _crewW], _mAPC, []] ]
+_type = _type + 1
+
+? (NoStDef) :goto "weiter1"
+
+unitDefs set [_type, ["Marder 1A3", 1000, _si, 30, "DVD_Marder", "\DVD_Config\Pics\Marder1A3.paa", _st, [3, _crewW], _mAPC, []] ]
+_marderW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Marder 1A3 Milan", 1600, _si, 30, "DVD_Marder_Milan", "\DVD_Config\Pics\Marder1A3M.paa", _st, [3, _crewW], _mAPC, []] ]
+_mardermilanW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 1A5", 1600, _si, 30, "DVD_Leo1A5", "\DVD_Config\Pics\Leo1A5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo1a5W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A4", 4000, _si, 50, "DVD_Leo2A4", "\DVD_Config\Pics\Leo2a4.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a4W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A5", 5000, _si, 55, "DVD_Leo2A5", "\DVD_Config\Pics\Leo2a5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a5W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A6", 6000, _si, 60, "DVD_Leo2A6", "\DVD_Config\Pics\Leo2a5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a6W = _type
+_type = _type + 1
+
+#weiter1
+? (!NoStDef) :goto "weiter2"
+
+unitDefs set [_type, ["Marder 1A3", 1000, _si, 30, "DVD_Marder_R", "\DVD_Config\Pics\Marder1A3.paa", _st, [3, _crewW], _mAPC, []] ]
+_marderW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Marder 1A3 Milan", 1600, _si, 30, "DVD_Marder_Milan_R", "\DVD_Config\Pics\Marder1A3M.paa", _st, [3, _crewW], _mAPC, []] ]
+_mardermilanW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 1A5", 1600, _si, 30, "DVD_Leo1A5_R", "\DVD_Config\Pics\Leo1A5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo1a5W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A4", 4000, _si, 50, "DVD_Leo2A4_R", "\DVD_Config\Pics\Leo2a4.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a4W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A5", 5000, _si, 55, "DVD_Leo2A5_R", "\DVD_Config\Pics\Leo2a5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a5W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Leopard 2A6", 6000, _si, 60, "DVD_Leo2A6_R", "\DVD_Config\Pics\Leo2a5.paa", _st, [3, _crewW], _mTank, []] ]
+_leo2a6W = _type
+_type = _type + 1
+
+#weiter2
+
+unitDefs set [_type, ["Gepard 1A2", 2000, _si, 30, "DVD_Gepard_R", "\DVD_Config\Pics\Gepard.paa", _st, [2, _crewW], _mAA, []] ]
+_vulcanW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MHQ West", _costSupportAPC, _si, 10, "DVD_MHQ_WEST2", "\DVD_Config\Pics\Fuchs.paa", -1, [2, _soldierW], _mMHQ, ["Common\InitMHQ.sqs"]] ]
+utMHQ0 = _type
+_type = _type + 1
+
+; AIR WEST
+_st = stAir
+
+unitDefs set [_type, ["SE-3130 Alouette", 5000, _si, 50, "BWMOD_Alu2", "\DVD_Config\Pics\alu2.paa", _st, [1, _pilotW], _mHeli, []] ]
+_alu2W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["EC-135", 5000, _si, 50, "BWMOD_EC135", "\DVD_Config\Pics\Ec135.paa", _st, [1, _pilotW], _mHeli, []] ]
+_ec135W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["BO-105 VBH", 5000, _si, 50, "DVD_Bo105vbh", "\DVD_Config\Pics\Bo105vbh.paa", _st, [1, _pilotW], _mHeli, []] ]
+_bo105tW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["NH-90 TTH", 8000, _si, 60, "DVD_NH90_TTH", "\DVD_Config\Pics\NH90.paa", _st, [1, _pilotW], _mHeli, ["Player\InitTransportChopper.sqs"]] ]
+_uh60W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["BO-105 PAH1", 24000, _si, 90, "DVD_Bo105pah1", "\DVD_Config\Pics\Bo105PAH1.paa", _st, [2, _pilotW], _mHeli, []] ]
+_ah1W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["UH Tiger (HOT3)", 26000, _si, 90, "DVD_Tiger_HOT3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
+_ah64W = _type
+_type = _type + 1
+
+unitDefs set [_type, ["UH Tiger (PARS3)", 28000, _si, 90, "DVD_Tiger_PARS3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
+_ah64xW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Tornado AS30L", 23000, _si, 90, "DVD_TRD_AS30", "\DVD_Config\Pics\TornadoAS30.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_mavW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Tornado LGB", 23000, _si, 90, "DVD_TRD_LGB", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_lgbW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Tornado Mk82HD", 27000, _si, 90, "DVD_TRD_MK82HD", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_type = _type + 1
+
+unitDefs set [_type, ["Tornado Bomblet", 30000, _si, 90, "DVD_TRD_MW1", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_type = _type + 1
+
+_st = stAir2
+
+unitDefs set [_type, ["Tornado Tomahawk", 40000, _si, 90, "DVD_TRD_tomahawk", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_nukeW = _type
+_type = _type + 1
+
+; EAST
+_si = si1
+
+; INFANTRY EAST
+_st = stBarracks
+
+unitDefs set [_type, ["Worker", costWorker, _si, 10, "DVDUS_SoldierWWorker_E", "ivojak", -1, [], "", ["Server\UpdateWorker.sqs"]] ]
+utWorkerE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M16", 100, _si, 10, "DVDUS_SoldierWB_E", "ivojak", _st, [], "", []] ]
+_soldierE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M16GL", 100, _si, 10, "DVDUS_SoldierWG_E", "igrenadier", _st, [], "", []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["MM1", 150, _si, 10, "DVDUS_SoldierWHG_E", "igrenadier", _st, [], "", []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["M60", 150, _si, 10, "DVDUS_SoldierWMG_E", "ismg", _st, [], "", []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["M249", 150, _si, 10, "DVDUS_SoldierWLMG_E", "ismg", _st, [], "", []] ]
+_soldierMGE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M21 Sniper", 250, _si, 10, "DVDUS_SoldierWsniper_E", "isniper", _st, [], "", []] ]
+_sniperE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M24 Sniper", 200, _si, 10, "DVDUS_SoldierWsniperM24_E", "isniper", _st, [], "", []] ]
+_sniper2E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["LAW", 200, _si, 10, "DVDUS_SoldierWLAW_E", "islaw", _st, [], "", []] ]
+_soldierLAW1E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["SMAW", 300, _si, 10, "DVDUS_SoldierWSMAW_E", "islaw", _st, [], "", []] ]
+_soldierLAWE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Carl Gustav", 200, _si, 10, "DVDUS_SoldierWAT_E", "isat", _st, [], "", []] ]
+_soldierATE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Javelin", 300, _si, 10, "DVDUS_SoldierWJAV_E", "isat", _st, [], "", []] ]
+_soldierJavelinE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Stinger", 150, _si, 10, "DVDUS_SoldierWAA_E", "isaa", _st, [], "", []] ]
+_soldierAAE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["SF Airborne Soldier", 200, _si, 10, "DVDUS_BlackOpDemo1_E", "\DVD_Config\Pics\iKSKOp.paa", _st, [], "", []] ]
+_bomberE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["SF Airborne Sniper", 250, _si, 10, "DVDUS_BlackOpSniper1_E", "\DVD_Config\Pics\iKSKsniper.paa", _st, [], "", []] ]
+_bomber2E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["SF Airborne M82 Sniper", 400, _si, 10, "DVDUS_BlackOpSniper2_E", "\DVD_Config\Pics\iKSKsniper.paa", _st, [], "", []] ]
+_bomber3E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Miner", 100, _si, 10, "DVDUS_SoldierWMiner_E", "iminer", _st, [], "", []] ]
+_minerE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Medic", 100, _si, 10, "DVDUS_SoldierWMedic_E", "imedic", _st, [], "", []] ]
+_medicE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Crew", 100, _si, 10, "DVDUS_SoldierWCrew_E", "icrew", _st, [], "", []] ]
+_crewE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Pilot", 100, _si, 10, "DVDUS_SoldierWpilot_E", "ipilot", _st, [], "", []] ]
+_pilotE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Custom", costCustom, _si, 10, "DVDUS_SoldierWB_E", "ivojak", -1, [], "", []] ]
+_customE = _type
+_type = _type + 1
+
+; LIGHT EAST
+_st = stLight
+
+unitDefs set [_type, ["KLR 250", 150, _si, 15, "DVD_sttklr250_E", "\DVD_Config\Pics\KLR.paa", _st, [1,_soldierE], _mbike, []] ]
+_klrW = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV Open", 200, _si, 20, "DVDUS_M998HMMWVopen_E", "\FK_HMMWV\ihmmwv_b.paa", _st, [1, _soldierE], _mCar, ["Common\EquipCargoCar.sqs"]] ]
+_jeepE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV", 250, _si, 20, "DVDUS_M998HMMWV_E", "\FK_HMMWV\ihmmwv_a.paa", _st, [1, _soldierE], _mCar, ["Common\EquipCargoCar.sqs"]] ]
+_HMMWVE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV Transport", 300, _si, 25, "DVDUS_M998HMMWVcargoO_E", "\FK_HMMWV\ihmmwv_d.paa", _st, [1, _soldierE], _mCar, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_HMMWVTE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV M2", 400, _si, 25, "DVDUS_M998HMMWV_m2wS_E", "\FK_HMMWV\ihmmwv_f.paa", _st, [2, _soldierE], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_HMMWVM2E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV mk.19", 800, _si, 25, "wood_hmmwv_m19", "\FK_HMMWV\ihmmwv_i.paa", _st, [2, _soldierE], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_HMMWVMK19E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["HMMWV mk.19 (with shield)", 900, _si, 25, "wood_hmmwv_m19wS", "\FK_HMMWV\ihmmwv_h.paa", _st, [2, _soldierE], _mAPC, ["Common\EquipCargoHeavyCar.sqs"]] ]
+_HMMWVMK19WSE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["5t Truck", 500, _si, 25, "DVDUS_Truck5t_E", "\Mp_nato5t\Textures\itruck5t.paa", _st, [1, _soldierE], _mTruck, ["Common\EquipCargoTruck.sqs"]] ]
+_truckE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["5t Truck Fuel", 500, _si, 25, "DVDUS_Truck5tfuel_E", "\Mp_nato5t\Textures\itruck5t.paa", _st, [1, _soldierE], _mTruck, []] ]
+_type = _type + 1
+
+unitDefs set [_type, ["5t Truck Support", _costSupportTruck, _si, 25, "DVDUS_Truck5trepair_E", "\Mp_nato5t\Textures\itruck5t.paa", _st, [1, _soldierE], _mSupport, ["Common\InitSupportVehicle.sqs", "Player\InitTransportTruck.sqs"]] ]
+_supportTruckE = _type
+_type = _type + 1
+
+? AdvancedMode : unitDefs set [_type, ["5t Truck Napalm", _costNapalm, _si, 30, "DVDUS_Truck5tfuel_E", "\Mp_nato5t\Textures\itruck5t.paa", _st, [1, _soldierE], _mTruck, ["Common\Napalm.sqs","Common\Napalm2.sqs"]] ]; _type = _type + 1
+
+unitDefs set [_type, ["Patrol Boat Tug", 1000, _si, 30, "DVDUS_BoatW_E", "\DVD_Config\Pics\bootw.paa", _st, [2, _soldierE], _mBoat, ["Player\InitTransportBoat.sqs"]] ]
+_boatE = _type
+_type = _type + 1
+
+; HEAVY EAST
+_st = stHeavy
+
+unitDefs set [_type, ["M113 Support", _costSupportAPC, _si, 30, "DVDUS_M113A3Amb_E", "\CBT_M113a_Scripts\m113w.paa", _st, [1, _soldierE], _mSupport, ["Common\InitSupportVehicle.sqs", "Player\InitTransportAPC.sqs"]] ]
+_supportAPCE = _type
+_type = _type + 1
+
+? (NoStDef) :goto "weiter3"
+
+unitDefs set [_type, ["M113A2", 700, _si, 30, "DVDUS_M113A3_S_E", "\CBT_M113a_Scripts\m113w.paa", _st, [2, _crewE], _mAPC, []] ]
+_m113a2E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M2A3 IFV", 1500, _si, 30, "DVDUS_M2A3_S_E", "\CBT_Brad\co\im2a1.paa", _st, [3, _crewE], _mAPC, []] ]
+_m2a3E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M3A3 CFV", 2000, _si, 30, "DVDUS_M3A3_S_E", "\CBT_Brad\co\im2a1.paa", _st, [3, _crewE], _mAPC, []] ]
+_m3a3E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M60A3", 1500, _si, 30, "DVDUS_M60A3_S_E", "\INQ_M60\pic_m60.paa", _st, [3, _crewE], _mTank, []] ]
+_m60E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A1", 4000, _si, 50, "DVDUS_M1A1_S_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a1E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A1 Heavy Armour", 5000, _si, 60, "DVDUS_M1A1HA_S_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a1HAE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A2", 6000, _si, 60, "DVDUS_M1A2_S_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a2E = _type
+_type = _type + 1
+
+#weiter3
+? (!NoStDef) :goto "weiter4"
+
+
+unitDefs set [_type, ["M113A2", 700, _si, 30, "DVDUS_M113A3_E", "\CBT_M113a_Scripts\m113w.paa", _st, [2, _crewE], _mAPC, []] ]
+_m113a2E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M2A3 IVF", 1500, _si, 30, "DVDUS_M2A3_E", "\CBT_Brad\co\im2a1.paa", _st, [3, _crewE], _mAPC, []] ]
+_m2a3E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M3A3 CFV", 2000, _si, 30, "DVDUS_M3A3_E", "\CBT_Brad\co\im2a1.paa", _st, [3, _crewE], _mAPC, []] ]
+_m3a3E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M60A3", 1500, _si, 30, "DVDUS_M60A3_E", "\INQ_M60\pic_m60.paa", _st, [3, _crewE], _mTank, []] ]
+_m60E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A1", 4000, _si, 50, "DVDUS_M1A1_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a1E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A1 Heavy Armour", 5000, _si, 55, "DVDUS_M1A1HA_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a1HAE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["M1A2", 6000, _si, 60, "DVDUS_M1A2_E", "iabrams", _st, [3, _crewE], _mTank, []] ]
+_m1a2E = _type
+_type = _type + 1
+
+#weiter4
+
+unitDefs set [_type, ["Vulcan", 1500, _si, 30, "DVDUS_Vulcan_E", "\VULCAN\ivulcan", _st, [2, _crewE], _mAA, []] ]
+_vulcanE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["MHQ East", _costSupportAPC, _si, 10, "DVDUS_M113MHQ_E", "\CBT_M113a_Scripts\m113w.paa", -1, [1, _soldierE], _mMHQ, ["Common\InitMHQ.sqs"]] ]
+utMHQ1 = _type
+_type = _type + 1
+
+; AIR EAST
+_st = stAir
+
+unitDefs set [_type, ["UH-1N", 6000, _si, 60, "DVDUS_UH1N_E", "\prph_uh1n\sebisfuh1h.paa", _st, [1, _pilotE], _mHeli, ["Player\InitTransportChopper.sqs"]] ]
+_uh60E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["UH-1N M134 (Support)", 10000, _si, 60, "DVDUS_UH1N_M134_E", "\prph_uh1n\sebisfuh1h2.paa", _st, [2, _pilotE], _mHeli, ["Common\InitSupportVehicle.sqs", "Player\InitTransportChopper.sqs"]] ]
+_uh602E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["AH-1W Super Cobra", 26000, _si, 90, "DVDUS_AH1W1_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
+_ah1E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["AH-1Z Viper", 28000, _si, 90, "DVDUS_AH1Z_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
+_ah1xE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["AH-64A (Combat)", 28000, _si, 90, "DVDUS_AH64A_E", "\APAC\iah64", _st, [2, _pilotE], _mHeli, []] ]
+_ah64E = _type
+_type = _type + 1
+
+unitDefs set [_type, ["AH-64A (Close-Support)", 30000, _si, 90, "DVDUS_AH64B_E", "\APAC\iah64", _st, [2, _pilotE], _mHeli, []] ]
+_ah64xE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["A-10 AT", 23000, _si, 90, "DVDUS_A10_E", "ia10", _st, [1, _pilotE], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_mavE = _type
+_type = _type + 1
+
+unitDefs set [_type, ["A-10 LGB", 23000, _si, 90, "DVDUS_A10LGB_E", "ia10", _st, [1, _pilotE], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_lgbE = _type
+_type = _type + 1
+
+_st = stAir2
+
+unitDefs set [_type, ["A-10 Tomahawk", 40000, _si, 90, "DVDUS_A10tomahawk_E", "ia10", _st, [1, _pilotE], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
+_nukeE = _type
+_type = _type + 1
+
+; RESISTANCE
+_si = siRes
+_st = -1
+
+; INFANTRY RES
+
+unitDefs set [_type, ["Soldier", 100, _si, 0, "DVD_SoldierGB", "ivojak", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_soldierR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Medic", 100, _si, 0, "DVD_SoldierGMedic", "imedic", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_medicR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Crew", 100, _si, 0, "DVD_SoldierGB", "icrew", _st, [], "", []] ]
+_crewR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["LMG", 150, _si, 0, "DVD_SoldierGLMG", "ismg", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_soldierLMGR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Heavy Grenadier", 150, _si, 0, "DVD_SoldierGHG", "isniper", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_grenR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Sniper", 150, _si, 0, "DVD_SoldierGsniper", "isniper", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_sniperR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["RPG", 200, _si, 0, "DVD_SoldierGLAW", "islaw", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_soldierLAWR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["AT4", 200, _si, 10, "DVD_SoldierGAT", "isat", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_soldierATR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["Strela", 150, _si, 10, "DVD_SoldierGAA", "isaa", _st, [], "", ["Common\InitSpawnchute.sqs"]] ]
+_soldierAAR = _type
+_type = _type + 1
+
+; ARMOR RES 
+
+unitDefs set [_type, ["BMP Res", 1000, _si, 0, "DVD_BMPRes_R", "\DVD_Config\Pics\BMP1.paa", _st, [3, _crewR], _mAPC, []] ]
+_bmpR = _type
+_type = _type + 1
+
+unitDefs set [_type, ["T55 Res", 1250, _si, 0, "DVD_T55Res_R", "\DVD_Config\Pics\T55.paa", _st, [3, _crewR], _mTank, []] ]
+_t55R = _type
+_type = _type + 1
+
+unitDefs set [_type, ["T72 Res", 1800, _si, 0, "DVD_T72Res_Orcs_R", "\DVD_Config\Pics\T-72B.paa", _st, [3, _crewR], _mTank, []] ]
+_t72R = _type
+_type = _type + 1
+
+unitDefs set [_type, ["T80UM Res", 3500, _si, 0, "DVD_T80UMRes_R", "\DVD_Config\Pics\T-80UM.paa", _st, [3, _crewR], _mTank, []] ]
+_t80R = _type
+_type = _type + 1
+
+? _type > maxUnitTypes : player globalchat format["Max unit types (%1) exceeded: %1", maxUnitTypes, _type]
+
+typesSupport = [ [_supportAPCW, _supportTruckW ], [_supportAPCE, _supportTruckE] ]
+
+utMiner = [_minerW, _minerE]
+
+; PLAYER CUSTOM INFANTRY
+infCustom = []
+_i = 0; while "_i < countInfCustom" do { infCustom set [_i, [] ]; _i=_i+1 }
+utCustom = [_customW, _customE]
+
+
+; TOWN UNITS
+
+infTown = [ [], [], [] ]
+infImpTown = [ [], [], [] ]
+armorTown = [ [], [], [] ]
+
+_si = si0
+infTown set [_si, [ [_medicW, 0.1], [_sniperW, 0.5], [_soldierMGW, 0.5], [_soldierLAWW, 1] ] ]
+infImpTown set [_si, [ [_soldierAAW, 0.5], [_soldierLAWW, 0.6], [_soldierATW, 0.7] ] ]
+armorTown set [_si, [ [_leo1a5W, 0.5], [_leo2a4W, 0.5], [_mardermilanW, 0.5], [_vulcanW, 0.5] ] ]
+
+_si = si1
+infTown set [_si, [ [_medicE, 0.1], [_sniperE, 0.5], [_soldierMGE, 0.5], [_soldierLAWE, 1] ] ]
+infImpTown set [_si, [ [_soldierAAE, 0.5], [_soldierLAWE, 0.6], [_soldierATE, 0.7] ] ]
+armorTown set [_si, [ [_m60E, 0.5], [_m1a1E, 0.5], [_m3a3E, 0.5], [_vulcanE, 0.5] ] ]
+
+_si = siRes
+infTown set [_si, [ [_medicR, 0.1], [_sniperR, 0.5], [_soldierLMGR, 0.5], [_grenR, 0.5], [_soldierLAWR, 1], [_soldierATR, 1], [_soldierAAR, 0.5] ] ]
+armorTown set [_si, [ [_bmpR, 0.5], [_t55R, 0.6], [_t72R, 1], [_t80R, 0.3] ] ]
+
+; AI UNITS - units bought by ai leaders, this must match aisBuy in aiSettingDefs in init.sqs
+
+unitsBuyAI = [ [], [] ]
+_i = 0
+
+utbNone = _i
+_list = []
+(unitsBuyAI select si0) set [_i, _list]
+_list = []
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbMixed = _i
+_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.5], [_soldierAAW, 0.5], [_soldierMGW, 1], [_soldierLAWW, 1], [_mardermilanW, 0.3], [_vulcanW, 0.4], [_leo1a5W, 0.1], [_leo2a4W, 0.6], [_leo2a5W, 0.7], [_leo2a6W, 1]]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.5], [_soldierAAE, 0.5], [_soldierMGE, 1], [_soldierLAWE, 1], [_soldierATE, 1], [_m2a3E, 0.3], [_m3a3E, 0.3], [_vulcanE, 0.4], [_m60E, 0.5], [_m1a1E, 0.6], [_m1a1HAE, 0.7], [_m1a2E, 1]]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbInfMixed = _i
+_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.4], [_bomber2W, 0.4], [_bomber3W, 0.4], [_soldierAAW, 0.5], [_soldierMGW, 0.9], [_soldierLAWW, 1]] 
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.4], [_bomber2E, 0.4], [_bomber3E, 0.4], [_soldierAAE, 0.5], [_soldierMGE, 0.9], [_soldierLAWE, 1], [_soldierATE, 1]]   
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbATInfMixed = _i
+_list = [ [_medicW, 0.1], [_soldierAAW, 0.3], [_soldierLAWW, 0.6], [_soldierATW, 1], [_soldierLAW2W, 0.7] ] 
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_medicE, 0.1], [_soldierAAE, 0.3], [_soldierLAWE, 0.6], [_soldierATE, 1], [_soldierJavelinE, 0.7] ]   
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbAAInf = _i
+_list = [ [_soldierAAW, 1] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_soldierAAE, 1] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbTanksMixed = _i
+_list = [ [ _mardermilanW, 0.3], [_vulcanW, 0.5], [_leo1a5W, 0.5], [_leo2a4W, 0.6], [_leo2a5W, 0.7], [_leo2a6W, 1] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_m3a3E, 0.3], [_vulcanE, 0.5], [_m60E, 0.5], [_m1a1E, 0.6], [_m1a1HAE, 0.7], [_m1a2E, 1] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbTanksHeavy = _i
+_list = [ [_leo2a4W, 0.6], [_leo2a5W, 0.7], [_leo2a6W, 1] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_m1a1E, 0.6], [_m1a1HAE, 0.7], [_m1a2E, 1] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbAA = _i
+_list = [ [_vulcanW, 0.6] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_vulcanE, 0.6] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbSnipers = _i
+_list = [ [_bomber3W, 0.2], [_bomber2W, 0.4], [_sniperW, 0.4], [_sniperMSG90W, 0.4] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_bomber3E, 0.2], [_bomber2E, 0.4], [_sniperE, 0.4], [_sniper2E, 0.4] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbBombers = _i
+_list = [ [_bomberW, 1] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_bomberE, 1] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbHelicopters = _i
+_list = [ [_ah1W, 0.7], [_ah64xW, 0.8] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_ah1E, 0.7], [_ah64xE, 0.8] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+utbJets = _i
+_list = [ [_nukeW, 0.2], [_lgbW, 0.3], [_mavW, 0.8] ]
+(unitsBuyAI select si0) set [_i, _list]
+_list = [ [_nukeE, 0.2], [_lgbE, 0.3], [_mavE, 0.8] ]
+(unitsBuyAI select si1) set [_i, _list]
+_i = _i + 1
+
+; EXTRA START VEHICLES
+; will not be placed when no players exist on side
+; entry format: [type, posRelMhq]
+vehiclesStart = []
+vehiclesStart set [si0, [ [_truckW, [-10, -15]], [_supportTruckW, [-20, -25]] ] ]
+vehiclesStart set [si1, [ [_truckE, [-10, -15]], [_supportTruckE, [-20, -25]] ] ]
+
+; TRANSPORT VEHICLES
+; ai groups will use (board) these if using transport vehicles
+; define which vehicles have the Eject Cargo action
+; ai co will only buy first type of air types for transport missions
+airTransport = [[], []]
+groundTransport = [[], []]
+driverAssigned = [[], []]
+_si = si0
+airTransport set [_si, [ _uh60W, _bo105tW, _alu2W, _ec135W, _ah1W ] ]
+groundTransport set [_si, [ _mardermilanW, _jeepW, _jeepmgW, _dingoW, _dingomg3W, _fuchsW, _mantruckW, _truckW, _marderW, _boatW ] ]
+_si = si1
+airTransport set [_si, [ _uh60E, _uh602E ] ]
+groundTransport set [_si, [ _HMMWVWTE, _HMMWVE, _HMMWVM2E, _HMMWVMK19E, _HMMWVMK19WSE, _m113a2E, _m2a3E, _m3a3E, _jeepE, _truckE, _boatE ] ]
+
+; VEHICLES WITH UNLIMITED WEAPON RANGE
+vUnlimitedRange = [ _vulcanW, _vulcanE ]
+
+unitMatrix = [ [], [], [] ]
+unitsBuilt = [ [], [], [] ]
+unitsFarAction = []
+
+_index = 0
+_count = count unitDefs
+#AddEmptyUnitArray
+	(unitMatrix select si0) set [_index, []]	
+	(unitMatrix select si1) set [_index, []]	
+	(unitMatrix select siRes) set [_index, []]	
+
+	(unitsBuilt select si0) set [_index, 0]	
+	(unitsBuilt select si1) set [_index, 0]	
+	(unitsBuilt select siRes) set [_index, 0]	
+
+	unitsFarAction set [_index, objNull]
+	
+	_index = _index + 1
+	? (_index < _count): goto "AddEmptyUnitArray"
+
+
+; rearmData entry format: [object, [weapon1, weapon2, ... ], [mag1, mag2, ...] ]
+; this array will be filled automatically during game when units are built
+rearmData = []
+
+; CLEANUP - mags, weapons and vehicles
+typesCleanup = ["WeaponHolder", "SecondaryWeaponHolder"]
+{ if ( count (_x select udCrew) > 0 ) then { typesCleanup set [count typesCleanup, _x select udModel] } } foreach unitDefs

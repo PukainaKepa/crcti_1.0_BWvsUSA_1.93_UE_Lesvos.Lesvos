@@ -1,0 +1,58 @@
+?! (Local LocalServerObject):Exit
+~20
+DeleteVehicle xx1;
+~0.5
+DeleteVehicle xx2;
+~0.5
+DeleteVehicle xx3;
+~0.5
+DeleteVehicle xx4;
+~0.5
+DeleteVehicle xx5;
+~0.5
+DeleteVehicle xx6;
+~0.5
+DeleteVehicle xx7;
+~0.5
+DeleteVehicle xx8;
+~0.5
+DeleteVehicle xx9;
+~0.5
+DeleteVehicle xx10;
+~0.5
+DeleteVehicle xx11;
+~0.5
+DeleteVehicle xx12;
+~0.5
+DeleteVehicle xx13;
+~0.5
+DeleteVehicle xx14;
+~0.5
+DeleteVehicle xx15;
+~0.5
+DeleteVehicle xx16;
+~0.5
+DeleteVehicle xx17;
+~0.5
+DeleteVehicle xx18;
+~0.5
+DeleteVehicle xx19;
+~0.5
+DeleteVehicle xx20;
+~0.5
+DeleteVehicle xx21;
+~0.5
+DeleteVehicle xx22;
+~0.5
+DeleteVehicle xx23;
+~0.5
+DeleteVehicle xx24;
+~0.5
+DeleteVehicle xx25;
+~0.5
+DeleteVehicle xx26;
+~0.5
+DeleteVehicle xx27;
+~0.5
+DeleteVehicle xx28;
+exit

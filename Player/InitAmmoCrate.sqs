@@ -1,0 +1,4 @@
+?siPlayer !=(_this select 2):exit
+_dist=2+((structDefs select (_this select 1)) select sdMaxRadius)
+[_this,["Buy Equipment"],_dist] exec "Player\UpdateFarStructureActions.sqs"
+exit

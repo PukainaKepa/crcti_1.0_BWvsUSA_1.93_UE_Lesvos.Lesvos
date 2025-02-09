@@ -1,0 +1,273 @@
+; structDefs defines all buildable structures
+ 
+alignDefs = []
+adCenter = 0
+adWidth = 1
+
+alignTypes = []
+
+structDefs = []
+
+sdName = 0
+sdCost = 1
+sdSides = 2
+sdImage = 3
+sdOnlyCO = 4
+sdOnlyMHQ = 5
+sdLimit = 6
+sdMaxRadius = 7
+sdDist = 8
+sdObjects0 = 9
+sdObjects1 = 10
+sdScriptsServer = 11
+sdScriptsPlayer = 12
+
+; knowsAbout level for enemy structure reports
+kaStruct = 1
+
+; object format: [oName, nRot, aPos]
+
+_type = 0
+
+_objects = [["DVD_v2_Bar", 180, []]]
+_image = ["Player\Barracks.jpg", "Player\Barracks.jpg"]
+structDefs set [_type, ["Barracks", 4000, siBoth, _image, true, true, 4, 10, 20, _objects, _objects, ["Server\InitPrimaryStructure.sqs", "Server\InitUnitFactory.sqs"], ["Player\InitBarracks.sqs"]] ]
+stBarracks = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_LF", 0, []], ["BarackeSupports3",0, []]]
+_image = ["Player\LightVehicleFactory.jpg", "Player\LightVehicleFactory.jpg"]
+structDefs set [_type, ["Light Veh. Factory", 2000, siBoth, _image, true, true, 4, 10, 20, _objects, _objects, ["Server\InitPrimaryStructure.sqs", "Server\InitUnitFactory.sqs"], ["Player\InitLightVehicleFactory.sqs"]] ]
+stLight = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_HF", 0, [1,0,0]]]
+_image = ["Player\HeavyVehicleFactory.jpg","Player\HeavyVehicleFactory.jpg"]
+structDefs set [_type, ["Heavy Veh. Factory", 8000, siBoth, _image, true, true, 4, 10, 20, _objects, _objects, ["Server\InitPrimaryStructure.sqs", "Server\InitUnitFactory.sqs"], ["Player\InitHeavyVehicleFactory.sqs"]] ]
+stHeavy = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_AirF", 0, [0,0,0]]]
+_image = ["Player\AircraftFactory.jpg","Player\AircraftFactory.jpg"]
+structDefs set [_type, ["Aircraft Factory", 20000, siBoth, _image, true, true, 4, 20, 25, _objects, _objects, ["Server\InitPrimaryStructure.sqs", "Server\InitUnitFactory.sqs"], ["Player\InitAircraftFactory.sqs"]] ]
+stAir = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_AirF", 0, [0,0,0]]]
+_image = ["Player\AircraftFactory.jpg","Player\AircraftFactory.jpg"]
+structDefs set [_type, ["Nuclear AirFac.", 90000, siBoth, _image, true, true, 1, 20, 25, _objects, _objects, ["Server\InitPrimaryStructure.sqs", "Server\InitUnitFactory.sqs"], ["Player\InitAircraftFactory.sqs"]] ]
+stAir2 = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_CC", 0, []], ["BarackeSupports2",0, [0,-0.6,-3]]]
+_image = ["Player\CommCenter.jpg", "Player\CommCenter.jpg"]
+structDefs set [_type, ["Comm Center", 4000, siBoth, _image, true, true, 4, 5, 20, _objects, _objects, ["Server\InitPrimaryStructure.sqs"]] ]
+stComm = _type
+_type = _type + 1
+
+_objects = [["DVD_v2_MASH", 180, []]]
+_image = ["Player\Hospital.jpg", "Player\Hospital.jpg"]
+structDefs set [_type, ["Field Hospital", 200, siBoth, _image, true, true, 4, 5, 20, _objects, _objects, ["Server\InitPrimaryStructure.sqs"]] ]
+_type = _type + 1
+
+_objects = [["DVD_v2_wall", 90, [0,0,3]]]
+_image = ["Player\WallH.jpg","Player\WallH.jpg"]
+structDefs set [_type, ["Wall Very High", 300, siBoth, _image, false, false, 50, 0.5, 15, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+alignTypes set [count alignTypes, _type]; alignDefs set [ count alignDefs, [[0,0], 9.9] ]
+_type = _type + 1
+
+_objects = [["DVD_v2_wall", 90, [0,0,0]]]
+_image = ["Player\WallH.jpg","Player\WallH.jpg"]
+structDefs set [_type, ["Wall High", 200, siBoth, _image, false, false, 50, 0.5, 15, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_wall = _type
+alignTypes set [count alignTypes, _type]; alignDefs set [ count alignDefs, [[0,0], 9.9] ]
+_type = _type + 1
+
+_objects = [["DVD_v2_wall", 90, [0,0,-3.5]]]
+_image = ["Player\WallL.jpg","Player\WallL.jpg"]
+structDefs set [_type, ["Wall Low", 100, siBoth, _image, false, false, 50, 0.5, 15, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+alignTypes set [count alignTypes, _type]; alignDefs set [ count alignDefs, [[0,0], 9.9] ]
+_type = _type + 1
+
+_objects = [ ["DVD_v2_roof", 0, [0,0,4.5]] ]
+_image = ["Player\Roof.jpg","Player\Roof.jpg"]
+structDefs set [_type, ["Roof", 500, siBoth, _image, true, false, 10, 1, 20, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_roof = _type
+_type = _type + 1
+
+_objects0 = [["DVD_M2MGW", 0, []]]
+_objects1 = [["DVD_M2MGE", 0, []]]
+_image = ["Player\MG.jpg","Player\MG.jpg"]
+structDefs set [_type, ["MG 12,7mm", 300, siBoth, _image, false, false, 10, 2, 5, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_mg = _type
+_type = _type + 1
+
+_objects0 = [["DVD_M2MGW", 0, [1.4,1.3,2.0]], ["gdtcti_fort_dvd", 0, []]]
+_objects1 = [["DVD_M2MGE", 0, [1.4,1.3,2.0]], ["gdtcti_fort_dvd", 0, []]]
+_image = ["Player\MGFort.jpg","Player\MGFort.jpg"]
+structDefs set [_type, ["MG Fort", 500, siBoth, _image, false, false, 10, 2, 15, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_mgFort = _type
+_type = _type + 1
+
+_objects0 = [["DVD_M2MGW", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_objects1 = [["DVD_M2MGE", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_image = ["Player\TowerM.jpg","Player\TowerM.jpg"]
+structDefs set [_type, ["MG Tower", 600, siBoth, _image, false, false, 10, 2, 15, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_mgTower = _type
+_type = _type + 1
+
+? (NoStDef) :goto "weiter"
+
+_objects0 = [["DVD_25mmMGW", 0, []]]
+_objects1 = [["DVD_25mmMGE", 0, []]]
+_image = ["Player\MG.jpg","Player\MG.jpg"]
+structDefs set [_type, ["45mm HE Gun", 1200, siBoth, _image, false, false, 2, 2, 5, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_heGun = _type
+_type = _type + 1
+
+_objects0 = [["DVD_25mmMGW", 0, [1.4,1.3,2.0]], ["gdtcti_fort_dvd", 0, []]]
+_objects1 = [["DVD_25mmMGE", 0, [1.4,1.3,2.0]], ["gdtcti_fort_dvd", 0, []]]
+_image = ["Player\MGFort.jpg","Player\MGFort.jpg"]
+structDefs set [_type, ["45mm HE Fort", 1300, siBoth, _image, false, false, 2, 2, 15, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_heFort = _type
+_type = _type + 1
+
+_objects0 = [["DVD_25mmMGW", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_objects1 = [["DVD_25mmMGE", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_image = ["Player\TowerM.jpg","Player\TowerM.jpg"]
+structDefs set [_type, ["45mm HE Tower", 1500, siBoth, _image, false, false, 2, 2, 15, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_heTower = _type
+_type = _type + 1
+
+_objects0 = [["DVD_AAMGW", 0, []]]
+_objects1 = [["DVD_AAMGE", 0, []]]
+_image = ["Player\MG.jpg","Player\MG.jpg"]
+structDefs set [_type, ["AA Gun", 1200, siBoth, _image, false, false, 2, 2, 10, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_AAGun = _type
+_type = _type + 1
+
+_objects0 = [["DVD_AAMGW", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_objects1 = [["DVD_AAMGE", 0, [1.4,2,6.0]], ["DVD_Tower1", 0, [1.4,1.3,-1.0]]]
+_image = ["Player\TowerM.jpg","Player\TowerM.jpg"]
+structDefs set [_type, ["AA Tower", 1500, siBoth, _image, false, false, 2, 2, 15, _objects0, _objects1, ["Server\InitSecondaryStructure.sqs"], []] ]
+_heTower = _type
+_type = _type + 1
+
+#weiter
+
+? (!AdvancedMode) : goto "noAdvancedStruct"
+_costATGM = atgmCost
+_costMortar = mortarCost
+_costAdvMortar = mortarCost * 2
+
+_objects = [["vit_konkursm", 0, []]]
+_image = ["Player\atgm.jpg","Player\atgm.jpg"]
+structDefs set [_type, ["ATGM", atgmCost, siBoth, _image, false, false, 10, 2, 5, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_type = _type + 1
+
+_objects=[["Mortar3", 0, []]]
+_image=["Player\mortar.jpg","Player\mortar.jpg"]
+structDefs set [_type, ["Mortar 81 mm", _costMortar, siBoth, _image, false, false, 1, 5, 10, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_type=_type+1
+
+_objects=[["Mortar4", 0, []]]
+_image=["Player\mortar.jpg","Player\mortar.jpg"]
+structDefs set [_type, ["Mortar 81 mm (long r.)", _costAdvMortar, siBoth, _image, false, false, 1, 5, 10, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_type=_type+1
+
+#noAdvancedStruct
+_objects = [ ["DVD_v2_trench", 0, [0,0,0]] ]
+_image = ["Player\Trench.jpg","Player\Trench.jpg"]
+structDefs set [_type, ["Tank Trench", 600, siBoth, _image, true, false, 50, 5, 20, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_type = _type + 1
+
+_objects = [["DVD_v2_sandbag", 90, []]]
+_image = ["Player\Sandbags.jpg","Player\Sandbags.jpg"]
+structDefs set [_type, ["Sand Bags", 15, siBoth, _image, false, false, 50, 2, 10, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+alignTypes set [count alignTypes, _type]; alignDefs set [ count alignDefs, [[0,0], 2.2] ]
+_type = _type + 1
+
+_objects = [["heliH", 0, []]];
+_image = ["Player\HeliH.jpg","Player\HeliH.jpg"]
+structDefs set [_type, ["Heli H", 100, siBoth, _image, true, false, 10, 5, 15, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], []] ]
+_heliH = _type
+_type = _type + 1
+
+_objects=[["DVD_Crate",0,[]]]
+_image=["Player\AmmoCr.jpg","Player\AmmoCr.jpg"]
+structDefs set [_type, ["Ammo Crate", 500, siBoth, _image, false, false, 10, 5, 10, _objects, _objects, ["Server\InitSecondaryStructure.sqs"], ["Player\InitAmmoCrate.sqs"]] ]
+_type=_type+1
+
+structMatrix = [ [], [] ]
+structsBuilt = [ [], [] ]
+
+_index = 0
+_count = count structDefs
+
+#InitStructs
+	(structMatrix select si0) set [_index, []]	
+	(structMatrix select si1) set [_index, []]	
+
+	(structsBuilt select si0) set [_index, 0]	
+	(structsBuilt select si1) set [_index, 0]	
+
+	_index = _index + 1
+	? (_index < _count): goto "InitStructs"
+
+structsRespawn = [stComm, stBarracks, stLight, stHeavy, stAir, stAir2]
+structsCritcal = [stComm, stBarracks, stLight, stHeavy, stAir, stAir2]
+
+; do server stuff only
+? !(local LocalServerObject) : Exit
+
+; BASE TEMPLATES
+
+; format [type, timeBuild, posRelMhq, dirBuilder]
+; dirBuilder is the direction the builder faces when building the structure relative to the MHQ
+
+bdType = 0
+bdTime = 1
+bdPos = 2
+bdDir = 3
+
+baseDefs = []
+
+_base = []
+_prims = []
+_prims set [count _prims, [stLight, 1, [-11, 18], 90] ]
+_prims set [count _prims, [stHeavy, 0, [7, 18], 180] ]
+_prims set [count _prims, [stComm, 1, [0, -16], 270] ]
+_prims set [count _prims, [stBarracks, 1, [-7, 0], 90] ]
+_prims set [count _prims, [stBarracks, 1, [7, 0], 270] ]
+_prims set [count _prims, [stAir, 10, [0, -60], 180] ]
+_prims set [count _prims, [stHeavy, 12, [-18, -60], 90] ]
+_prims set [count _prims, [stAir2, 25, [25, -60], 180] ]
+_prims set [count _prims, [stHeavy, 60, [45, -60], 270] ]
+_base set [0, _prims]
+
+_secs = []
+_secs set [count _secs, [_wall, 5, [0, -22], 0] ]
+_secs set [count _secs, [_wall, 5, [10, -22], 0] ]
+_secs set [count _secs, [_wall, 5, [-10, -22], 0] ]
+_secs set [count _secs, [_wall, 5, [-15, -17], 90] ]
+_secs set [count _secs, [_wall, 5, [-15, -7], 90] ]
+_secs set [count _secs, [_wall, 5, [-15, 3], 90] ]
+_secs set [count _secs, [_wall, 5, [15, -17], 270] ]
+_secs set [count _secs, [_wall, 5, [15, -7], 270] ]
+_secs set [count _secs, [_wall, 5, [15, 3], 270] ]
+_secs set [count _secs, [_roof, 5, [-10, 3], 90] ]
+_secs set [count _secs, [_roof, 5, [-10, -7], 90] ]
+_secs set [count _secs, [_roof, 5, [10, 3], 270] ]
+_secs set [count _secs, [_roof, 5, [10, -7], 270] ]
+_secs set [count _secs, [_roof, 5, [0, 3], 90] ]
+_secs set [count _secs, [_roof, 5, [0, -7], 90] ]
+_secs set [count _secs, [_wall, 5, [10, -7], 0] ]
+_secs set [count _secs, [_wall, 5, [-10, -7], 0] ]
+_secs set [count _secs, [_wall, 5, [0, -5], 0] ]
+_secs set [count _secs, [_wall, 5, [-10, 8], 180] ]
+_secs set [count _secs, [_wall, 5, [10, 8], 180] ]
+_secs set [count _secs, [_heliH, 20, [40, 0], 90] ]
+_secs set [count _secs, [_heliH, 20, [-40, 0], 270] ]
+_base set [1, _secs]
+
+baseDefs set [count baseDefs, _base]
