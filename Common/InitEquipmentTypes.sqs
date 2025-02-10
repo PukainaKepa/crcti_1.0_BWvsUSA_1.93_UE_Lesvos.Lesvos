@@ -26,14 +26,14 @@ magSatchel = "PipeBomb"
 weaponPut = "Put"
 weaponsCustom = []
 
-cargoCarSide0 = [[magMine,3], ["Pipebomb",4], ["DVD_RGW60_R",4], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["DVD_PzFst3_T",2], ["CarlGustavLauncher",4], ["BWMOD_FLF2_R",2]] 
-cargoCarSide1 = [[magMine,3], ["Pipebomb",4], ["DVDUS_LAWmag",4], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["CBT_Jav_Mag",2], ["DVD_CGmag",4], ["AALauncher",2]] 
+cargoCarSide0 = [[magMine,3], ["Pipebomb",4], ["DVD_RGW60_R",4], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["CarlGustavLauncher",4]] 
+cargoCarSide1 = [[magMine,3], ["Pipebomb",4], ["DVDUS_LAWmag",4], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["DVD_CGmag",4]] 
 
-cargoHeavyCarSide0 = [[magMine,5], ["Pipebomb",5], ["DVD_RGW60_R",6], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["DVD_PzFst3_T",4], ["CarlGustavLauncher",4], ["BWMOD_FLF2_R",2]] 
-cargoHeavyCarSide1 = [[magMine,5], ["Pipebomb",5], ["DVDUS_LAWmag",6], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["CBT_Jav_Mag",4], ["DVD_CGmag",4], ["AALauncher",2]]
+cargoHeavyCarSide0 = [[magMine,5], ["Pipebomb",5], ["DVD_RGW60_R",6], ["DVD_PzFst3_B",4], ["DVD_PzFst3_R",4], ["CarlGustavLauncher",4]] 
+cargoHeavyCarSide1 = [[magMine,5], ["Pipebomb",5], ["DVDUS_LAWmag",6], ["DVDUS_smawHE",4], ["DVDUS_smawAT",4], ["DVD_CGmag",4]]
 
-cargoTruckSide0 = [[magMine,8], ["Pipebomb",10], ["DVD_RGW60_R",10], ["DVD_PzFst3_B",8], ["DVD_PzFst3_R",8], ["DVD_PzFst3_T",6], ["CarlGustavLauncher",8], ["BWMOD_FLF2_R",4]]
-cargoTruckSide1 = [[magMine,8], ["Pipebomb",10], ["DVDUS_LAWmag",10], ["DVDUS_smawHE",8], ["DVDUS_smawAT",8], ["CBT_Jav_Mag",6], ["DVD_CGmag",8], ["AALauncher",4]]
+cargoTruckSide0 = [[magMine,8], ["Pipebomb",10], ["DVD_RGW60_R",10], ["DVD_PzFst3_B",8], ["DVD_PzFst3_R",8], ["CarlGustavLauncher",8]]
+cargoTruckSide1 = [[magMine,8], ["Pipebomb",10], ["DVDUS_LAWmag",10], ["DVDUS_smawHE",8], ["DVDUS_smawAT",8], ["DVD_CGmag",8]]
 
 weaponsRespawnPlayer = [ ["DVD_G36A", "DVD_PzFst3", "Binocular", "NVGoggles"], ["DVDUS_M16acog", "DVDUS_smawLauncher", "Binocular", "NVGoggles"]]
 magsRespawnPlayer = [ ["DVD_G36AMag", "DVD_G36AMag", "DVD_G36AMag", "DVD_PzFst3_R"], ["DVDUS_m16mag", "DVDUS_m16mag", "DVDUS_m16mag", "DVDUS_smawAT"]]
@@ -117,20 +117,12 @@ equipDefs set [_type, ["BunkerFst", si0, isGeneral, 2, "DVD_PzFst3_B", "\BWMOD_w
 _atBunkerFst = _type
 _type = _type + 1
 
-equipDefs set [_type, ["Pzfst3T", si0, isGeneral, 6, "DVD_PzFst3_T", "\BWMOD_w\pic\m_pzfst3_pf.paa", 300 ]]
-_atPzfst3T = _type
-_type = _type + 1
-
 equipDefs set [_type, ["RGW60", si0, isGeneral, 2, "DVD_RGW60_R", "\BWMOD_w\pic\m_pzfst3_pf.paa", 60 ]]
 _atRGW60 = _type
 _type = _type + 1
 
 equipDefs set [_type, ["Carl Gustav", si0, isGeneral, 4, "DVD_CGmag", "\dtaExt\equip\m\m_carlgustavlauncher", 60 ]]
 _atCarlGustav = _type
-_type = _type + 1
-
-equipDefs set [_type, ["Flfst2", si0, isGeneral, 6, "BWMOD_FLF2_R", "\dtaExt\equip\m\m_aalauncher", 300 ]]
-_atStinger = _type
 _type = _type + 1
 
 equipDefs set [_type, ["G3 Grenade", si0, isGeneral, 1, "DVD_40mmGranate", "\bwmod_g3tgs\40mm.paa", 25 ]]
@@ -237,14 +229,6 @@ _type = _type + 1
 
 equipDefs set [_type, ["M72A3", si1, isGeneral, 2, "DVDUS_LAWmag", "\dtaExt\equip\m\m_lawlauncher", 60 ]]
 _atLAW = _type
-_type = _type + 1
-
-equipDefs set [_type, ["Stinger", si1, isGeneral, 6, "AALauncher", "\dtaExt\equip\m\m_aalauncher", 300 ]]
-_atStinger = _type
-_type = _type + 1
-
-equipDefs set [_type, ["Javelin", si1, isGeneral, 6, "CBT_Jav_Mag", "\CBT_Misc\jav\gear2.paa", 300 ]]
-_Javelin = _type
 _type = _type + 1
 
 equipDefs set [_type, ["M203 Grenade", si1, isGeneral, 1, "c8xM203grenade", "\c8xmag\pics\m203grenade.paa", 25 ]]
@@ -412,16 +396,13 @@ _type = _type + 1
 weaponDefs set [_type, ["MM-1", si0, wtPrimaryOnly, "DVD_MM1", "\MM-1\mm-1", [[_atMM1,2]], 0 ]]
 _type = _type + 1
 
-weaponDefs set [_type, ["Pzfst3", si0, wtSecondary, "DVD_PzFst3", "\BWMOD_w\pic\w_pzfst3.paa", [[_atPzfst3,2],[_atBunkerfst,0],[_atPzfst3T,0]], 0 ]]
+weaponDefs set [_type, ["Pzfst3", si0, wtSecondary, "DVD_PzFst3", "\BWMOD_w\pic\w_pzfst3.paa", [[_atPzfst3,2],[_atBunkerfst,0]], 0 ]]
 _type = _type + 1
 
 weaponDefs set [_type, ["RGW60", si0, wtSecondary, "DVD_RGW60", "\DVD_Config\rgw60\w_RGW60.paa", [[_atRGW60,3]], 0 ]]
 _type = _type + 1
 
 weaponDefs set [_type, ["Carl Gustav", si0, wtSecondary, "DVD_CG", "\dtaExt\equip\w\w_carlgustavlauncher", [[_atCarlGustav,2]], 0 ]]
-_type = _type + 1
-
-weaponDefs set [_type, ["Flfst2", si0, wtSecondary, "BWMOD_FLF2", "\dtaExt\equip\w\w_aalauncher", [[_atStinger,1]], 0 ]]
 _type = _type + 1
 
 weaponDefs set [_type, ["MP2 UZI", si0, wtHandgun, "DVD_UZI", "\O\Guns\w_uzi.paa", [[_atUZI,4]], 0 ]]
@@ -496,12 +477,6 @@ weaponDefs set [_type, ["SMAW", si1, wtSecondary, "DVDUS_smawLauncher", "\SUCHus
 _type = _type + 1
 
 weaponDefs set [_type, ["Carl Gustav", si1, wtSecondary, "DVD_CG", "\dtaExt\equip\w\w_carlgustavlauncher", [[_atCarlGustav,2]], 0 ]]
-_type = _type + 1
-
-weaponDefs set [_type, ["Stinger", si1, wtSecondary, "AALauncher", "\dtaExt\equip\w\w_aalauncher", [[_atStinger,1]], 0 ]]
-_type = _type + 1
-
-weaponDefs set [_type, ["Javelin Missile", si1, wtSecondary, "CBT_Jav_Launcher", "\CBT_Misc\jav\gear1.paa", [[_Javelin,1]], 0 ]]
 _type = _type + 1
 
 weaponDefs set [_type, ["1911 Colt", si1, wtHandgun, "DVDUS_1911sf", "\wip_45\w_M1911sf.paa", [[_at1911,4]], 0 ]]

@@ -294,7 +294,7 @@ aiSettingDefs set [_type, ["Watch", ["Scan", "N", "NE", "E", "SE", "S", "SW", "W
 _type = _type + 1
 
 aisBuy = _type
-aiSettingDefs set [_type, ["Buy", ["none", "Mixed", "Infantry Mixed", "Infantry Anti-Tank", "Infantry Anti-Air", "Armor Mixed", "Armor Heavy", "Vehicles Anti-Air", "Snipers", "Saboteurs"], 0] ]
+aiSettingDefs set [_type, ["Buy", ["none", "Mixed", "Infantry Mixed", "Infantry Anti-Tank", "Armor Mixed", "Armor Heavy", "Vehicles Anti-Air", "Snipers", "Saboteurs"], 0] ]
 _type = _type + 1
 
 aisKeep = _type

@@ -93,14 +93,6 @@ unitDefs set [_type, ["Pzfst3", 300, _si, 10, "DVD_SoldierWLAW", "isat", _st, []
 _soldierLAWW = _type
 _type = _type + 1
 
-unitDefs set [_type, ["Pzfst3T", 300, _si, 10, "DVD_SoldierWLAW1", "isat", _st, [], "", []] ]
-_soldierLAW2W = _type
-_type = _type + 1
-
-unitDefs set [_type, ["Flfst2", 150, _si, 10, "DVD_SoldierWAA", "isaa", _st, [], "", []] ]
-_soldierAAW = _type
-_type = _type + 1
-
 unitDefs set [_type, ["KSK Soldier (MP5)", 200, _si, 10, "DVD_KSKOp", "\DVD_Config\Pics\iKSKOp.paa", _st, [], "", []] ]
 _bomberW = _type
 _type = _type + 1
@@ -356,14 +348,6 @@ _type = _type + 1
 
 unitDefs set [_type, ["Carl Gustav", 200, _si, 10, "DVDUS_SoldierWAT_E", "isat", _st, [], "", []] ]
 _soldierATE = _type
-_type = _type + 1
-
-unitDefs set [_type, ["Javelin", 300, _si, 10, "DVDUS_SoldierWJAV_E", "isat", _st, [], "", []] ]
-_soldierJavelinE = _type
-_type = _type + 1
-
-unitDefs set [_type, ["Stinger", 150, _si, 10, "DVDUS_SoldierWAA_E", "isaa", _st, [], "", []] ]
-_soldierAAE = _type
 _type = _type + 1
 
 unitDefs set [_type, ["SF Airborne Soldier", 200, _si, 10, "DVDUS_BlackOpDemo1_E", "\DVD_Config\Pics\iKSKOp.paa", _st, [], "", []] ]
@@ -646,12 +630,12 @@ armorTown = [ [], [], [] ]
 
 _si = si0
 infTown set [_si, [ [_medicW, 0.1], [_sniperW, 0.5], [_soldierMGW, 0.5], [_soldierLAWW, 1] ] ]
-infImpTown set [_si, [ [_soldierAAW, 0.5], [_soldierLAWW, 0.6], [_soldierATW, 0.7] ] ]
+infImpTown set [_si, [ [_soldierLAWW, 0.6], [_soldierATW, 0.7] ] ]
 armorTown set [_si, [ [_leo1a5W, 0.5], [_leo2a4W, 0.5], [_mardermilanW, 0.5], [_vulcanW, 0.5] ] ]
 
 _si = si1
 infTown set [_si, [ [_medicE, 0.1], [_sniperE, 0.5], [_soldierMGE, 0.5], [_soldierLAWE, 1] ] ]
-infImpTown set [_si, [ [_soldierAAE, 0.5], [_soldierLAWE, 0.6], [_soldierATE, 0.7] ] ]
+infImpTown set [_si, [ [_soldierLAWE, 0.6], [_soldierATE, 0.7] ] ]
 armorTown set [_si, [ [_m60E, 0.5], [_m1a1E, 0.5], [_m3a3E, 0.5], [_vulcanE, 0.5] ] ]
 
 _si = siRes
@@ -671,30 +655,23 @@ _list = []
 _i = _i + 1
 
 utbMixed = _i
-_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.5], [_soldierAAW, 0.5], [_soldierMGW, 1], [_soldierLAWW, 1], [_mardermilanW, 0.3], [_vulcanW, 0.4], [_leo1a5W, 0.1], [_leo2a4W, 0.6], [_leo2a5W, 0.7], [_leo2a6W, 1]]
+_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.5], [_soldierMGW, 1], [_soldierLAWW, 1], [_mardermilanW, 0.3], [_vulcanW, 0.4], [_leo1a5W, 0.1], [_leo2a4W, 0.6], [_leo2a5W, 0.7], [_leo2a6W, 1]]
 (unitsBuyAI select si0) set [_i, _list]
-_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.5], [_soldierAAE, 0.5], [_soldierMGE, 1], [_soldierLAWE, 1], [_soldierATE, 1], [_m2a3E, 0.3], [_m3a3E, 0.3], [_vulcanE, 0.4], [_m60E, 0.5], [_m1a1E, 0.6], [_m1a1HAE, 0.7], [_m1a2E, 1]]
+_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.5], [_soldierMGE, 1], [_soldierLAWE, 1], [_soldierATE, 1], [_m2a3E, 0.3], [_m3a3E, 0.3], [_vulcanE, 0.4], [_m60E, 0.5], [_m1a1E, 0.6], [_m1a1HAE, 0.7], [_m1a2E, 1]]
 (unitsBuyAI select si1) set [_i, _list]
 _i = _i + 1
 
 utbInfMixed = _i
-_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.4], [_bomber2W, 0.4], [_bomber3W, 0.4], [_soldierAAW, 0.5], [_soldierMGW, 0.9], [_soldierLAWW, 1]] 
+_list = [ [_medicW, 0.1], [_sniperW, 0.5], [_bomberW, 0.4], [_bomber2W, 0.4], [_bomber3W, 0.4], [_soldierMGW, 0.9], [_soldierLAWW, 1]] 
 (unitsBuyAI select si0) set [_i, _list]
-_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.4], [_bomber2E, 0.4], [_bomber3E, 0.4], [_soldierAAE, 0.5], [_soldierMGE, 0.9], [_soldierLAWE, 1], [_soldierATE, 1]]   
+_list = [ [_medicE, 0.1], [_sniperE, 0.5], [_bomberE, 0.4], [_bomber2E, 0.4], [_bomber3E, 0.4], [_soldierMGE, 0.9], [_soldierLAWE, 1], [_soldierATE, 1]]   
 (unitsBuyAI select si1) set [_i, _list]
 _i = _i + 1
 
 utbATInfMixed = _i
-_list = [ [_medicW, 0.1], [_soldierAAW, 0.3], [_soldierLAWW, 0.6], [_soldierATW, 1], [_soldierLAW2W, 0.7] ] 
+_list = [ [_medicW, 0.1], [_soldierLAWW, 0.6], [_soldierATW, 1], [_soldierLAW2W, 0.7] ] 
 (unitsBuyAI select si0) set [_i, _list]
-_list = [ [_medicE, 0.1], [_soldierAAE, 0.3], [_soldierLAWE, 0.6], [_soldierATE, 1], [_soldierJavelinE, 0.7] ]   
-(unitsBuyAI select si1) set [_i, _list]
-_i = _i + 1
-
-utbAAInf = _i
-_list = [ [_soldierAAW, 1] ]
-(unitsBuyAI select si0) set [_i, _list]
-_list = [ [_soldierAAE, 1] ]
+_list = [ [_medicE, 0.1], [_soldierLAWE, 0.6], [_soldierATE, 1], [_soldierATE, 0.7] ]   
 (unitsBuyAI select si1) set [_i, _list]
 _i = _i + 1
 
