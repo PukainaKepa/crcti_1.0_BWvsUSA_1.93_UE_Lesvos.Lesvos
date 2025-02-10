@@ -8,7 +8,7 @@ _textTB = ["Off", "On"] select Tbon
 
 _textMF = ["On", "Off"] select NoStDef
 
-_textRules = ["ONE Base (MHQ) and ONE Start Light Factory"] select 0
+_textRules = ["Discuss in chat!"] select 0
 
 _si = si0
 _group = (groupMatrix select _si) select 0

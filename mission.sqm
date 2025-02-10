@@ -110,7 +110,7 @@ class Mission
 	class Intel
 	{
 		briefingName="@STR_MISSION_NAME";
-		briefingDescription="Extreme Edition 20210923 | Downloads: ofpisnotdead.com, ruprt.ofpr.info";
+		briefingDescription="Unguided Edition 20250209 (retro)";
 		resistanceWest=0.000000;
 		month=8;
 		day=21;
