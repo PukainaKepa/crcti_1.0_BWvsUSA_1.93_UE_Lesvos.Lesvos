@@ -255,46 +255,16 @@ _type = _type + 1
 ; AIR WEST
 _st = stAir
 
-unitDefs set [_type, ["SE-3130 Alouette", 5000, _si, 50, "BWMOD_Alu2", "\DVD_Config\Pics\alu2.paa", _st, [1, _pilotW], _mHeli, []] ]
-_alu2W = _type
-_type = _type + 1
-
-unitDefs set [_type, ["EC-135", 5000, _si, 50, "BWMOD_EC135", "\DVD_Config\Pics\Ec135.paa", _st, [1, _pilotW], _mHeli, []] ]
-_ec135W = _type
-_type = _type + 1
-
-unitDefs set [_type, ["BO-105 VBH", 5000, _si, 50, "DVD_Bo105vbh", "\DVD_Config\Pics\Bo105vbh.paa", _st, [1, _pilotW], _mHeli, []] ]
-_bo105tW = _type
-_type = _type + 1
-
-unitDefs set [_type, ["NH-90 TTH", 8000, _si, 60, "DVD_NH90_TTH", "\DVD_Config\Pics\NH90.paa", _st, [1, _pilotW], _mHeli, ["Player\InitTransportChopper.sqs"]] ]
+unitDefs set [_type, ["NH-90 TTH", 6000, _si, 60, "DVD_NH90_TTH", "\DVD_Config\Pics\NH90.paa", _st, [1, _pilotW], _mHeli, ["Player\InitTransportChopper.sqs"]] ]
 _uh60W = _type
 _type = _type + 1
 
-unitDefs set [_type, ["BO-105 PAH1", 24000, _si, 90, "DVD_Bo105pah1", "\DVD_Config\Pics\Bo105PAH1.paa", _st, [2, _pilotW], _mHeli, []] ]
-_ah1W = _type
-_type = _type + 1
-
-unitDefs set [_type, ["UH Tiger (HOT3)", 26000, _si, 90, "DVD_Tiger_HOT3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
+unitDefs set [_type, ["UH Tiger (FFAR)", 28000, _si, 90, "DVD_Tiger_HOT3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
 _ah64W = _type
-_type = _type + 1
-
-unitDefs set [_type, ["UH Tiger (PARS3)", 28000, _si, 90, "DVD_Tiger_PARS3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
-_ah64xW = _type
-_type = _type + 1
-
-unitDefs set [_type, ["Tornado AS30L", 23000, _si, 90, "DVD_TRD_AS30", "\DVD_Config\Pics\TornadoAS30.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
-_mavW = _type
 _type = _type + 1
 
 unitDefs set [_type, ["Tornado LGB", 23000, _si, 90, "DVD_TRD_LGB", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
 _lgbW = _type
-_type = _type + 1
-
-unitDefs set [_type, ["Tornado Mk82HD", 27000, _si, 90, "DVD_TRD_MK82HD", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
-_type = _type + 1
-
-unitDefs set [_type, ["Tornado Bomblet", 30000, _si, 90, "DVD_TRD_MW1", "\DVD_Config\Pics\TornadoLGB.paa", _st, [2, _pilotW], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
 _type = _type + 1
 
 _st = stAir2
@@ -516,28 +486,8 @@ unitDefs set [_type, ["UH-1N", 6000, _si, 60, "DVDUS_UH1N_E", "\prph_uh1n\sebisf
 _uh60E = _type
 _type = _type + 1
 
-unitDefs set [_type, ["UH-1N M134 (Support)", 10000, _si, 60, "DVDUS_UH1N_M134_E", "\prph_uh1n\sebisfuh1h2.paa", _st, [2, _pilotE], _mHeli, ["Common\InitSupportVehicle.sqs", "Player\InitTransportChopper.sqs"]] ]
-_uh602E = _type
-_type = _type + 1
-
-unitDefs set [_type, ["AH-1W Super Cobra", 26000, _si, 90, "DVDUS_AH1W1_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
-_ah1E = _type
-_type = _type + 1
-
-unitDefs set [_type, ["AH-1Z Viper", 28000, _si, 90, "DVDUS_AH1Z_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
+unitDefs set [_type, ["AH-1Z Viper (FFAR)", 28000, _si, 90, "DVDUS_AH1Z_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
 _ah1xE = _type
-_type = _type + 1
-
-unitDefs set [_type, ["AH-64A (Combat)", 28000, _si, 90, "DVDUS_AH64A_E", "\APAC\iah64", _st, [2, _pilotE], _mHeli, []] ]
-_ah64E = _type
-_type = _type + 1
-
-unitDefs set [_type, ["AH-64A (Close-Support)", 30000, _si, 90, "DVDUS_AH64B_E", "\APAC\iah64", _st, [2, _pilotE], _mHeli, []] ]
-_ah64xE = _type
-_type = _type + 1
-
-unitDefs set [_type, ["A-10 AT", 23000, _si, 90, "DVDUS_A10_E", "ia10", _st, [1, _pilotE], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
-_mavE = _type
 _type = _type + 1
 
 unitDefs set [_type, ["A-10 LGB", 23000, _si, 90, "DVDUS_A10LGB_E", "ia10", _st, [1, _pilotE], _mPlane, ["Server\InitSpawnPlane.sqs"]] ]
