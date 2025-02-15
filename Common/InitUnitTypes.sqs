@@ -259,7 +259,7 @@ unitDefs set [_type, ["NH-90 TTH", 6000, _si, 60, "DVD_NH90_TTH", "\DVD_Config\P
 _uh60W = _type
 _type = _type + 1
 
-unitDefs set [_type, ["UH Tiger (FFAR)", 28000, _si, 90, "DVD_Tiger_HOT3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, []] ]
+unitDefs set [_type, ["UH Tiger (FFAR)", 28000, _si, 90, "DVD_Tiger_HOT3", "\DVD_Config\Pics\Tiger.paa", _st, [2, _pilotW], _mHeli, ["Common\EquipFFAR.sqs"]] ]
 _ah64W = _type
 _type = _type + 1
 
@@ -486,7 +486,7 @@ unitDefs set [_type, ["UH-1N", 6000, _si, 60, "DVDUS_UH1N_E", "\prph_uh1n\sebisf
 _uh60E = _type
 _type = _type + 1
 
-unitDefs set [_type, ["AH-1Z Viper (FFAR)", 28000, _si, 90, "DVDUS_AH1Z_E", "icobra", _st, [2, _pilotE], _mHeli, []] ]
+unitDefs set [_type, ["AH-1Z Viper (FFAR)", 28000, _si, 90, "DVDUS_AH1Z_E", "icobra", _st, [2, _pilotE], _mHeli, ["Common\EquipFFAR.sqs"]] ]
 _ah1xE = _type
 _type = _type + 1
 
