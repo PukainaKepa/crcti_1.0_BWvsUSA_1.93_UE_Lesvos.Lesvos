@@ -14,6 +14,6 @@ _v addWeapon "DVD_KA50AP";
 _v addMagazine "DVD_KA50AP";
 _v addMagazine "DVD_KA50HE";
 
-_v addWeapon "Rocket57x64";
-_v addMagazine "Rocket57x64";
+_v addWeapon "ZuniLauncher38";
+_v addMagazine "ZuniLauncher38";
 
