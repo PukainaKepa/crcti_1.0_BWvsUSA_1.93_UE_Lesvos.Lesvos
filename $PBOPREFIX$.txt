@@ -1,4 +1,4 @@
-//<'crcti_1.0_nato@dvd_1.93_extreme_edition_Amoeba.Amoeba.pbo' properties via Mikero's dos tools, dll version 7.97>
+//<'crcti_1.0_nato@dvd_1.93_extreme_edition_Lesvos.Lesvos.pbo' properties via Mikero's dos tools, dll version 7.97>
 product=OFP: Resistance;
 //PboType=Resistance Mission;
 //</properties>
